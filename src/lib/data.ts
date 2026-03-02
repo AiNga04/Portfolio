@@ -149,13 +149,58 @@ export const cvData: CVData = {
   ],
   projects: [
     {
-      title: "Personal Portfolio",
+      title: "Zyna E-Commerce Frontend",
       description:
-        "A premium, production-ready personal CV/Portfolio website built with Next.js 16 and Framer Motion.",
-      tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
-      githubUrl: "https://github.com/AiNga04",
-      liveUrl: "https://example.com",
-      image: "/projects/portfolio.png",
+        "High-performance e-learning & shopping platform interface. Built with Next.js 16, React Query, and Tailwind for a seamless, production-ready user experience.",
+      tech: ["Next.js", "React Query", "TypeScript", "Tailwind CSS"],
+      githubUrl: "https://github.com/AiNga04/Fe-Ecommerce",
+      liveUrl: "https://github.com/AiNga04/Fe-Ecommerce",
+      image: "/projects/ecommerce-fe.png",
+    },
+    {
+      title: "Zyna E-Commerce Backend",
+      description:
+        "Scalable RESTful API for E-commerce featuring granular RBAC, JWT authentication, and high-performance database management with Spring Boot.",
+      tech: ["Spring Boot", "MySQL", "JWT", "RBAC", "Microservices"],
+      githubUrl: "https://github.com/AiNga04/Be-Ecommerce",
+      liveUrl: "https://github.com/AiNga04/Be-Ecommerce",
+      image: "/projects/ecommerce-be.png",
+    },
+    {
+      title: "E2EE_SHIELD SDK",
+      description:
+        "Security-focused SDK for end-to-end encryption on API transmissions based on Zero Trust principles. Protects sensitive data with modern cryptographic standards.",
+      tech: ["Security", "API", "Zero Trust", "TypeScript"],
+      githubUrl: "https://github.com/AiNga04/E2EE_SHIELD",
+      liveUrl: "https://github.com/AiNga04/E2EE_SHIELD",
+      image: "/projects/security.png",
+    },
+    {
+      title: "Wanderlust Travel Masterclass",
+      description:
+        "Premium travel discovery platform with smooth animations and responsive flight/hotel booking interfaces. Built with Tailwind CSS and modern JS.",
+      tech: ["Tailwind CSS", "JavaScript", "HTML", "SCSS"],
+      githubUrl: "https://github.com/AiNga04/11_Tailwind_Travel",
+      liveUrl: "https://ainga04.github.io/11_Tailwind_Travel/",
+      image: "/projects/travel.png",
+    },
+    {
+      title: "Movie Zone Production",
+      description:
+        "Attractive movie streaming website with smart filtering features. Provides a seamless viewing experience with a sleek, dark-themed production interface.",
+      tech: ["HTML", "CSS", "SCSS", "Bootstrap", "JavaScript"],
+      githubUrl: "https://github.com/AiNga04/8_Movie_Zone",
+      liveUrl: "https://ainga04.github.io/8_Movie_Zone/",
+      image: "/projects/movie.png",
+    },
+    {
+      title: "Online Course Platform",
+      description:
+        "Modern e-learning platform featuring smart course filtering and an instructional UI designed for optimal learning efficiency and user engagement.",
+      tech: ["HTML", "CSS", "SCSS", "Bootstrap", "JavaScript"],
+      githubUrl: "https://github.com/AiNga04/6_Bootstrap_CourseSales",
+      liveUrl: "https://ainga04.github.io/6_Bootstrap_CourseSales",
+      image: "/projects/learning.png",
     },
   ],
   contact: {
