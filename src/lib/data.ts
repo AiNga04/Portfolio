@@ -3,6 +3,7 @@ import { CVData } from "@/types";
 export const cvData: CVData = {
   name: "TRƯƠNG ÁI NGA",
   title: "Frontend Developer",
+  roles: ["Frontend Developer", "HCMUTE Student", "Passionate Tech Learner"],
   tagline:
     "Building premium, performant, and user-centric web experiences with modern technologies.",
   about: {

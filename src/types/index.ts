@@ -24,6 +24,7 @@ export interface Project {
 export interface CVData {
   name: string;
   title: string;
+  roles: string[];
   tagline: string;
   about: {
     summary: string;

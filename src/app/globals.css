@@ -9,6 +9,24 @@
   --color-accent-cyan: #06b6d4;
 
   --font-sans: var(--font-inter);
+
+  @keyframes shine {
+    from {
+      background-position: 0% center;
+    }
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-150%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(150%) rotate(45deg);
+    }
+  }
 }
 
 :root {
@@ -29,7 +47,34 @@ body {
 }
 
 @utility text-gradient {
-  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  background: linear-gradient(to right, #3b82f6, #06b6d4, #a855f7, #3b82f6);
+  background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+}
+
+@utility bg-shimmer {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+  }
 }

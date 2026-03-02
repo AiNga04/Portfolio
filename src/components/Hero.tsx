@@ -8,38 +8,30 @@ import { cvData } from "@/lib/data";
 export default function Hero() {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [loopNum, setLoopNum] = useState(0);
+  const [roleIndex, setRoleIndex] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
-  const [colorIndex, setColorIndex] = useState(0);
 
-  const name = cvData.name;
-  const colors = [
-    "text-accent-cyan",
-    "text-accent-blue",
-    "text-purple-400",
-    "text-emerald-400",
-    "text-orange-400",
-  ];
+  const roles = cvData.roles;
 
   const handleType = useCallback(() => {
-    const fullText = name;
+    const currentRole = roles[roleIndex % roles.length];
     const updatedText = isDeleting
-      ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text.length + 1);
+      ? currentRole.substring(0, text.length - 1)
+      : currentRole.substring(0, text.length + 1);
 
     setText(updatedText);
 
-    if (!isDeleting && updatedText === fullText) {
-      setTypingSpeed(2000); // Pause at end
+    if (!isDeleting && updatedText === currentRole) {
+      setTypingSpeed(2000); // Pause at end of typing
       setIsDeleting(true);
     } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
-      setLoopNum((prev) => prev + 1);
+      setRoleIndex((prev) => prev + 1);
       setTypingSpeed(500);
     } else {
-      setTypingSpeed(isDeleting ? 100 : 150);
+      setTypingSpeed(isDeleting ? 80 : 120);
     }
-  }, [name, isDeleting, text.length]);
+  }, [roles, roleIndex, isDeleting, text.length]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -49,18 +41,11 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, [handleType, typingSpeed]);
 
-  useEffect(() => {
-    const colorTimer = setInterval(() => {
-      setColorIndex((prev) => (prev + 1) % colors.length);
-    }, 2000);
-    return () => clearInterval(colorTimer);
-  }, [colors.length]);
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background decoration */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-blue/20 rounded-full blur-[128px] -z-10" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-cyan/20 rounded-full blur-[128px] -z-10" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-blue/10 rounded-full blur-[128px] -z-10" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-cyan/10 rounded-full blur-[128px] -z-10" />
 
       <div className="container mx-auto px-6 text-center">
         <motion.div
@@ -72,57 +57,64 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-accent-cyan font-medium mb-4 text-lg"
+            className="text-accent-cyan font-semibold mb-6 text-lg tracking-widest uppercase"
           >
-            Welcome, everyone! It’s great to have you here!
+            Welcome &bull; It&apos;s great to have you here
           </motion.p>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight min-h-[1.2em]">
+          <h1 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter">
             Hi, I&apos;m{" "}
-            <span
-              className={`relative group inline-block transition-colors duration-1000 ${colors[colorIndex]}`}
-            >
-              {text}
-              <span className="inline-block w-[4px] h-[0.8em] bg-current ml-1 animate-pulse align-middle" />
-              <span className="absolute inset-0 blur-2xl bg-current opacity-20 scale-150 rounded-full -z-10" />
+            <span className="text-gradient block md:inline mt-2 md:mt-0">
+              {cvData.name}
             </span>
           </h1>
 
-          <h2 className="text-2xl md:text-3xl font-medium text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
-            {cvData.title}
-          </h2>
+          <div className="text-2xl md:text-4xl font-bold text-gray-300 mb-8 h-[1.2em] flex items-center justify-center">
+            <span className="text-gray-400 mr-3">I am a</span>
+            <span className="text-accent-cyan relative inline-block min-w-[50px]">
+              {text}
+              <span className="inline-block w-[3px] h-[0.9em] bg-accent-cyan ml-1 animate-pulse align-middle" />
+            </span>
+          </div>
 
-          <p className="text-gray-400 text-xl font-normal mb-8 max-w-2xl mx-auto italic">
+          <p className="text-gray-400 text-xl font-normal mb-12 max-w-2xl mx-auto italic leading-relaxed">
             {cvData.tagline}
           </p>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-accent-cyan/80 text-lg font-medium mb-12 max-w-2xl mx-auto glass py-4 px-6 rounded-2xl border border-white/5"
+            className="mb-16 inline-block"
           >
-            “When you want something, all the universe conspires in helping you
-            to achieve it”
-          </motion.p>
+            <div className="text-accent-cyan/90 text-lg font-medium glass py-4 px-8 rounded-2xl border border-white/10 shadow-2xl relative overflow-hidden group">
+              <span className="relative z-10 flex items-center gap-3 justify-center">
+                <span className="text-2xl text-accent-cyan/50">&ldquo;</span>
+                When you want something, all the universe conspires in helping
+                you to achieve it
+                <span className="text-2xl text-accent-cyan/50">&rdquo;</span>
+              </span>
+              <div className="absolute inset-0 bg-accent-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+          </motion.div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
             <motion.a
               href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-accent-blue to-accent-cyan text-white rounded-xl font-semibold flex items-center gap-2 shadow-lg shadow-accent-cyan/20 hover:shadow-accent-cyan/40 transition-shadow"
+              className="px-10 py-4 bg-gradient-to-r from-accent-blue to-accent-cyan text-white rounded-2xl font-bold flex items-center gap-2 shadow-xl shadow-accent-cyan/20 hover:shadow-accent-cyan/40 transition-all bg-shimmer"
             >
-              View Projects <ArrowRight size={20} />
+              Explore My Work <ArrowRight size={20} />
             </motion.a>
             <motion.a
               href={cvData.contact.cvUrl}
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 rounded-xl font-semibold transition-colors flex items-center gap-2 group"
+              className="px-10 py-4 bg-white/5 border border-white/10 hover:bg-white/10 rounded-2xl font-bold transition-all flex items-center gap-2 group bg-shimmer"
             >
-              Download CV{" "}
+              Get Resume{" "}
               <Download
                 size={20}
                 className="group-hover:translate-y-1 transition-transform"
