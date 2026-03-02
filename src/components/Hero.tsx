@@ -1,10 +1,61 @@
 "use client";
 
+import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react";
 import { cvData } from "@/lib/data";
 
 export default function Hero() {
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+  const [colorIndex, setColorIndex] = useState(0);
+
+  const name = cvData.name;
+  const colors = [
+    "text-accent-cyan",
+    "text-accent-blue",
+    "text-purple-400",
+    "text-emerald-400",
+    "text-orange-400",
+  ];
+
+  const handleType = useCallback(() => {
+    const fullText = name;
+    const updatedText = isDeleting
+      ? fullText.substring(0, text.length - 1)
+      : fullText.substring(0, text.length + 1);
+
+    setText(updatedText);
+
+    if (!isDeleting && updatedText === fullText) {
+      setTypingSpeed(2000); // Pause at end
+      setIsDeleting(true);
+    } else if (isDeleting && updatedText === "") {
+      setIsDeleting(false);
+      setLoopNum((prev) => prev + 1);
+      setTypingSpeed(500);
+    } else {
+      setTypingSpeed(isDeleting ? 100 : 150);
+    }
+  }, [name, isDeleting, text.length]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      handleType();
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [handleType, typingSpeed]);
+
+  useEffect(() => {
+    const colorTimer = setInterval(() => {
+      setColorIndex((prev) => (prev + 1) % colors.length);
+    }, 2000);
+    return () => clearInterval(colorTimer);
+  }, [colors.length]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background decoration */}
@@ -26,11 +77,14 @@ export default function Hero() {
             Welcome, everyone! It’s great to have you here!
           </motion.p>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight min-h-[1.2em]">
             Hi, I&apos;m{" "}
-            <span className="text-gradient relative group inline-block">
-              {cvData.name}
-              <span className="absolute inset-0 blur-2xl bg-accent-cyan/20 scale-150 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
+            <span
+              className={`relative group inline-block transition-colors duration-1000 ${colors[colorIndex]}`}
+            >
+              {text}
+              <span className="inline-block w-[4px] h-[0.8em] bg-current ml-1 animate-pulse align-middle" />
+              <span className="absolute inset-0 blur-2xl bg-current opacity-20 scale-150 rounded-full -z-10" />
             </span>
           </h1>
 
