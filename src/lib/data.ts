@@ -19,15 +19,34 @@ export const cvData: CVData = {
     goal: "I also prioritize security in frontend development by implementing best practices against XSS attacks, managing authentication flows securely, optimizing data handling, and collaborating effectively with backend systems. I believe great user experiences must be both visually refined and technically secure.",
   },
   skills: [
-    { name: "React", category: "Frontend" },
-    { name: "Next.js", category: "Frontend" },
-    { name: "TypeScript", category: "Frontend" },
-    { name: "JavaScript", category: "Frontend" },
-    { name: "Tailwind CSS", category: "Styling" },
-    { name: "HTML/CSS", category: "Styling" },
+    // Frontend - Core
+    { name: "HTML5 / CSS3 / SCSS", category: "Frontend" },
+    { name: "JavaScript (ES6+) / TypeScript", category: "Frontend" },
+
+    // Frontend - Frameworks & Libs
+    { name: "React.js / Next.js (App Router)", category: "Frontend" },
+    { name: "Redux Toolkit / Context API", category: "Frontend" },
+    { name: "TanStack Query / Axios", category: "Frontend" },
+
+    // UI & Styling
+    { name: "Tailwind CSS / Bootstrap 5", category: "Styling" },
+    { name: "shadcn/ui / Ant Design / MUI", category: "Styling" },
     { name: "Framer Motion", category: "Styling" },
-    { name: "Git", category: "Tools" },
-    { name: "Vercel", category: "Tools" },
+
+    // Backend (Foundation)
+    { name: "Node.js / NestJS (REST API)", category: "Backend" },
+    { name: "Spring Boot", category: "Backend" },
+    { name: "MySQL / Postgresql / MongoDB", category: "Backend" },
+    { name: "JWT / RBAC", category: "Backend" },
+
+    // Tools & DevOps
+    { name: "Git / GitHub / Docker", category: "Other Skills" },
+    { name: "Vercel / CI/CD concepts", category: "Other Skills" },
+    { name: "Postman / Figma", category: "Other Skills" },
+
+    // Soft Skills
+    { name: "Agile / Scrum / Teamwork", category: "Other Skills" },
+    { name: "Problem-Solving / Research", category: "Other Skills" },
   ],
   experience: [
     {

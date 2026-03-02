@@ -103,7 +103,7 @@ export default function Hero() {
               href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 bg-gradient-to-r from-accent-blue to-accent-cyan text-white rounded-2xl font-bold flex items-center gap-2 shadow-xl shadow-accent-cyan/20 hover:shadow-accent-cyan/40 transition-all bg-shimmer"
+              className="px-10 py-4 bg-linear-to-r from-accent-blue to-accent-cyan text-white rounded-2xl font-bold flex items-center gap-2 shadow-xl shadow-accent-cyan/20 hover:shadow-accent-cyan/40 transition-all bg-shimmer"
             >
               Explore My Work <ArrowRight size={20} />
             </motion.a>

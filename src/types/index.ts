@@ -1,6 +1,6 @@
 export interface Skill {
   name: string;
-  category: "Frontend" | "Backend" | "Styling" | "Tools";
+  category: "Frontend" | "Backend" | "Styling" | "Other Skills";
   icon?: string;
 }
 
