@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Premium Personal Portfolio - Ái Nga
 
-## Getting Started
+A high-performance, visually stunning personal portfolio/CV website built with **Next.js 15 (App Router)**, **TypeScript**, and **Tailwind CSS**. Designed for speed, elegance, and a premium user experience.
 
-First, run the development server:
+![Portfolio Preview](public/icon.png)
+
+## ✨ key Features
+
+- **💎 Premium Design**: Sleek dark theme with glassmorphism, vibrant gradients, and professional typography.
+- **⚡ Performance First**: Near-instant load times using Next.js Static Site Generation (SSG).
+- **📱 Fully Responsive**: Optimized for all devices, from mobile to ultra-wide displays.
+- **🎨 Advanced Animations**: Smooth entrance and hover effects powered by **Framer Motion**.
+- **🔗 Social Connect 3D**: Interactive social media cards with 3D rotation, platform-specific glows, and custom 3D icons.
+- **🧭 Robust Navigation**: Custom manual smooth-scroll handler ensuring reliable navigation on mobile devices.
+- **🛠️ Tech Stack Expansion**:
+  - **Frontend**: Next.js, React, Tailwind CSS (v4 compatible), Lucide Icons.
+  - **Animation**: Framer Motion.
+  - **Typing**: TypeScript.
+  - **Assets**: Custom 3D assets and Favicon.
+
+## 🛠️ Tech Stack
+
+| Category       | Technologies                |
+| :------------- | :-------------------------- |
+| **Framework**  | Next.js 15 (App Router)     |
+| **Language**   | TypeScript                  |
+| **Styling**    | Tailwind CSS, CSS Variables |
+| **Icons**      | Lucide React                |
+| **Motion**     | Framer Motion               |
+| **Deployment** | Vercel                      |
+
+## 📁 Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+├── public/          # Static assets (3D Icons, Favicon, PDF CV)
+├── src/
+│   ├── app/         # Next.js App Router (Layouts, Pages, Metadata)
+│   ├── components/  # Modular UI Sections (Hero, Skills, Experience, Projects, etc.)
+│   ├── lib/         # Application data (data.ts) and business logic
+│   ├── types/       # TypeScript interface definitions
+│   └── styles/      # Global CSS and Tailwind utilities
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18.x or higher
+- npm or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/AiNga04/Portfolio.git
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Install dependencies:
 
-## Deploy on Vercel
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Run the development server:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📄 Personal Introduction
+
+> Hi, I'm **Truong Ai Nga**, a passionate front-end developer and security-focused student who loves crafting beautiful and functional web experiences. Always eager to learn and grow in the ever-evolving tech world.
+
+---
+
+Built with ❤️ by **Ái Nga**
