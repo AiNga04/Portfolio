@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import { cvData } from "@/lib/data";
 
@@ -32,40 +33,31 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -12 }}
-              className="group relative bg-[#0a0c10] rounded-[2rem] overflow-hidden border border-white/5 hover:border-accent-cyan/30 transition-all duration-500 shadow-2xl hover:shadow-accent-cyan/10"
+              className="group relative bg-[#0a0c10] rounded-4xl overflow-hidden border border-white/5 hover:border-accent-cyan/30 transition-all duration-500 shadow-2xl hover:shadow-accent-cyan/10"
             >
               {/* Image Container */}
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-16/10 overflow-hidden bg-[#0d0f14]">
                 {/* Status Badge */}
-                <div className="absolute top-4 left-4 z-30 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full border border-white/10">
+                <div className="absolute top-4 left-4 z-40 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full border border-white/10">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-gray-300">
                     {index % 2 === 0 ? "Production" : "Masterclass"}
                   </span>
                 </div>
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-accent-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-
-                {/* Fallback/Project Image */}
-                <div className="w-full h-full bg-gradient-to-br from-[#1a1c25] to-[#0d0f14] flex items-center justify-center group-hover:scale-110 transition-transform duration-700 ease-out">
-                  <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-                  <div className="relative z-20 flex flex-col items-center gap-4">
-                    <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl group-hover:bg-accent-cyan/20 group-hover:border-accent-cyan/40 transition-all duration-500">
-                      {project.title.includes("E-Commerce")
-                        ? "🛒"
-                        : project.title.includes("SDK")
-                          ? "🛡️"
-                          : project.title.includes("Travel")
-                            ? "🌍"
-                            : project.title.includes("Movie")
-                              ? "🎬"
-                              : "🎓"}
-                    </div>
-                    <span className="text-sm font-bold tracking-widest text-white/40 uppercase group-hover:text-accent-cyan transition-colors">
-                      {project.title.split(" ").pop()}
-                    </span>
-                  </div>
+                {/* Main Project Image */}
+                <div className="absolute inset-0 z-10 group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700 ease-out">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover opacity-50 group-hover:opacity-100 transition-all duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#0a0c10] via-transparent to-transparent z-20 opacity-80" />
                 </div>
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-accent-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
 
                 {/* Quick Actions Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center gap-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-30 px-6">
