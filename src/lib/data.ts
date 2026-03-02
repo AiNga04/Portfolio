@@ -209,4 +209,37 @@ export const cvData: CVData = {
     github: "https://github.com/AiNga04",
     cvUrl: "/resume.pdf", // USER: Place your resume.pdf in the public/ folder
   },
+  socials: [
+    {
+      platform: "Facebook",
+      url: "https://www.facebook.com/truong.ai.nga.2025/",
+      description:
+        "Don't miss the opportunity to learn and connect with me on Facebook!",
+      icon: "/assets/icons/facebook-3d.png",
+      color: "#1877F2",
+    },
+    {
+      platform: "Github",
+      url: "https://github.com/AiNga04",
+      description:
+        "Explore open source projects and connect with me on GitHub!",
+      icon: "/assets/icons/github-3d.png",
+      color: "#6e5494",
+    },
+    {
+      platform: "Instagram",
+      url: "https://www.instagram.com/ainga_76",
+      description: "Follow the latest updates and connect via Instagram!",
+      icon: "/assets/icons/instagram-3d.png",
+      color: "#E4405F",
+    },
+    {
+      platform: "LinkedIn",
+      url: "https://www.linkedin.com/in/nga-tr%C6%B0%C6%A1ng-bb62202ab/",
+      description:
+        "Professional networking and industry connections on LinkedIn!",
+      icon: "/assets/icons/linkedin-3d.png",
+      color: "#0A66C2",
+    },
+  ],
 };

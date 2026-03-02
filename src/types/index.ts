@@ -22,6 +22,14 @@ export interface Project {
   image: string;
 }
 
+export interface Social {
+  platform: string;
+  url: string;
+  description: string;
+  icon: string;
+  color: string;
+}
+
 export interface CVData {
   name: string;
   title: string;
@@ -42,4 +50,5 @@ export interface CVData {
     github: string;
     cvUrl: string;
   };
+  socials: Social[];
 }
