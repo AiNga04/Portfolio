@@ -205,10 +205,17 @@ export const cvData: CVData = {
   ],
   contact: {
     email: "ainga01012004@gmail.com",
+    phone: "+84 376 600 545",
+    address: "Di An, Binh Duong, Viet Nam",
     linkedin: "https://www.linkedin.com/in/nga-tr%C6%B0%C6%A1ng-bb62202ab/",
     github: "https://github.com/AiNga04",
-    cvUrl: "/resume.pdf", // USER: Place your resume.pdf in the public/ folder
+    cvUrl: "/cv/resume.pdf",
   },
+  hobbies: [
+    { name: "Reading Technology Blogs", icon: "book" },
+    { name: "Go for a walk after many hours of work", icon: "walk" },
+    { name: "Listening to Music", icon: "music" },
+  ],
   socials: [
     {
       platform: "Facebook",

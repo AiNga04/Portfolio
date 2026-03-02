@@ -46,9 +46,12 @@ export interface CVData {
   projects: Project[];
   contact: {
     email: string;
+    phone: string;
+    address: string;
     linkedin: string;
     github: string;
     cvUrl: string;
   };
   socials: Social[];
+  hobbies: { name: string; icon: string }[];
 }
