@@ -18,7 +18,7 @@ export default function Experience() {
             Work <span className="text-gradient">Experience</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            My professional journey and the impact I've made at various
+            My professional journey and the impact I&apos;ve made at various
             organizations.
           </p>
         </motion.div>
@@ -39,19 +39,39 @@ export default function Experience() {
               <div className="glass p-8 rounded-2xl relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-accent-cyan/10 transition-colors" />
 
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
-                  <h3 className="text-2xl font-bold text-gray-100">
-                    {exp.role}
-                  </h3>
-                  <div className="flex items-center gap-2 text-accent-cyan font-medium">
+                <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 gap-6">
+                  <div className="flex items-start gap-4">
+                    {exp.icon ? (
+                      <div className="p-2 rounded-xl bg-white/5 border border-white/10 shrink-0">
+                        <img
+                          src={exp.icon}
+                          alt={exp.company}
+                          className="w-12 h-12 object-contain rounded-lg"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).style.display =
+                              "none";
+                          }}
+                        />
+                      </div>
+                    ) : (
+                      <div className="p-3 rounded-xl bg-accent-cyan/10 border border-accent-cyan/20 shrink-0 text-accent-cyan">
+                        <Briefcase size={24} />
+                      </div>
+                    )}
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-100 mb-1">
+                        {exp.role}
+                      </h3>
+                      <div className="flex items-center gap-2 text-gray-400 font-medium">
+                        <Briefcase size={16} />
+                        <span>{exp.company}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 text-accent-cyan font-medium shrink-0 bg-accent-cyan/5 px-4 py-2 rounded-xl border border-accent-cyan/10">
                     <Calendar size={18} />
                     <span>{exp.duration}</span>
                   </div>
-                </div>
-
-                <div className="flex items-center gap-2 text-gray-400 mb-6 font-medium">
-                  <Briefcase size={18} />
-                  <span>{exp.company}</span>
                 </div>
 
                 <ul className="space-y-3 mb-8">

@@ -10,6 +10,7 @@ export interface Experience {
   duration: string;
   responsibilities: string[];
   tech: string[];
+  icon?: string;
 }
 
 export interface Project {
