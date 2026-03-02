@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react";
 import { cvData } from "@/lib/data";
 
 export default function Hero() {
@@ -17,25 +17,40 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.span
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-block py-1 px-4 rounded-full border border-accent-cyan/30 bg-accent-cyan/10 text-accent-cyan text-sm font-medium mb-6"
+            className="text-accent-cyan font-medium mb-4 text-lg"
           >
-            Available for opportunities
-          </motion.span>
+            Welcome, everyone! It’s great to have you here!
+          </motion.p>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-            Hi, I'm <span className="text-gradient">{cvData.name}</span>
+            Hi, I&apos;m{" "}
+            <span className="text-gradient relative group inline-block">
+              {cvData.name}
+              <span className="absolute inset-0 blur-2xl bg-accent-cyan/20 scale-150 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
+            </span>
           </h1>
 
-          <h2 className="text-2xl md:text-3xl font-medium text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-            {cvData.title}. <br className="hidden md:block" />
-            <span className="text-gray-400 text-xl font-normal mt-4 block">
-              {cvData.tagline}
-            </span>
+          <h2 className="text-2xl md:text-3xl font-medium text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
+            {cvData.title}
           </h2>
+
+          <p className="text-gray-400 text-xl font-normal mb-8 max-w-2xl mx-auto italic">
+            {cvData.tagline}
+          </p>
+
+          <motion.p
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4 }}
+            className="text-accent-cyan/80 text-lg font-medium mb-12 max-w-2xl mx-auto glass py-4 px-6 rounded-2xl border border-white/5"
+          >
+            “When you want something, all the universe conspires in helping you
+            to achieve it”
+          </motion.p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <motion.a
@@ -47,12 +62,17 @@ export default function Hero() {
               View Projects <ArrowRight size={20} />
             </motion.a>
             <motion.a
-              href="#contact"
+              href={cvData.contact.cvUrl}
+              download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 rounded-xl font-semibold transition-colors"
+              className="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 rounded-xl font-semibold transition-colors flex items-center gap-2 group"
             >
-              Contact Me
+              Download CV{" "}
+              <Download
+                size={20}
+                className="group-hover:translate-y-1 transition-transform"
+              />
             </motion.a>
           </div>
 

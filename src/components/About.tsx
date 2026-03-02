@@ -27,10 +27,17 @@ export default function About() {
 
             <div className="grid grid-cols-2 gap-4">
               {cvData.about.strengths.map((strength, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-accent-cyan" />
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + index * 0.1 }}
+                  className="flex items-center gap-3 glass p-3 rounded-xl border border-white/5 hover:border-accent-cyan/30 transition-colors"
+                >
+                  <div className="w-2 h-2 rounded-full bg-accent-cyan shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
                   <span className="text-gray-200 font-medium">{strength}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>

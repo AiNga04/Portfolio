@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
-import { cvData } from "@/lib/data";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -38,10 +37,7 @@ export default function Navbar() {
           className="text-2xl font-bold text-gradient cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          {cvData.name
-            .split(" ")
-            .map((n) => n[0])
-            .join("")}
+          NA
         </motion.div>
 
         {/* Desktop Links */}

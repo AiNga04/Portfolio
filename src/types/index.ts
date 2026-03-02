@@ -37,5 +37,6 @@ export interface CVData {
     email: string;
     linkedin: string;
     github: string;
+    cvUrl: string;
   };
 }
