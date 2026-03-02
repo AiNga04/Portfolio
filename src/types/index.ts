@@ -26,6 +26,7 @@ export interface CVData {
   title: string;
   roles: string[];
   tagline: string;
+  avatar: string;
   about: {
     summary: string;
     strengths: string[];

@@ -5,12 +5,13 @@ export const cvData: CVData = {
   title: "Frontend Developer",
   roles: ["Frontend Developer", "HCMUTE Student", "Passionate Tech Learner"],
   tagline:
-    "Building premium, performant, and user-centric web experiences with modern technologies.",
+    "Hi, I'm Trương Ái Nga, a passionate web developer specialized in creating intuitive and user-friendly web applications.",
+  avatar: "/assets/images/Ái Nga.jpg",
   about: {
     summary:
-      "Dynamic, creative, and proactive. Welcome, everyone! It’s great to have you here!",
+      "I have a deep understanding of HTML, CSS, JavaScript, and modern frameworks like React. I'm always eager to learn new technologies and grow my skills.",
     strengths: ["Dynamic", "Creative", "Proactive", "UI/UX Driven"],
-    goal: "“When you want something, all the universe conspires in helping you to achieve it”. My goal is to use my passion for frontend development to build beautiful and impactful web experiences.",
+    goal: "I believe in continuous improvement and making a positive impact through technology. Let's connect and collaborate!",
   },
   skills: [
     { name: "React", category: "Frontend" },

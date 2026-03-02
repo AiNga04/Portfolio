@@ -50,8 +50,12 @@ export default function About() {
             className="md:w-1/2 relative"
           >
             <div className="aspect-square rounded-3xl overflow-hidden glass p-4 relative">
-              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-accent-blue/20 to-accent-cyan/20 flex items-center justify-center">
-                <span className="text-8xl">👨‍💻</span>
+              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-accent-blue/20 to-accent-cyan/20 overflow-hidden">
+                <img
+                  src={cvData.avatar}
+                  alt={cvData.name}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
               </div>
             </div>
             {/* Decorative element */}
