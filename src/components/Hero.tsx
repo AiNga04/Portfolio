@@ -62,7 +62,7 @@ export default function Hero() {
             Welcome &bull; It&apos;s great to have you here
           </motion.p>
 
-          <h1 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter">
+          <h1 className="text-3xl md:text-5xl font-black mb-8 tracking-tighter">
             Hi, I&apos;m{" "}
             <span className="text-gradient block md:inline mt-2 md:mt-0">
               {cvData.name}
