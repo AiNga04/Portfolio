@@ -6,7 +6,7 @@ import { cvData } from "@/lib/data";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-background">
+    <section id="experience" className="py-24 bg-background scroll-mt-24">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

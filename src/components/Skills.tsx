@@ -43,7 +43,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-24 bg-background relative overflow-hidden"
+      className="py-24 bg-background relative overflow-hidden scroll-mt-24"
     >
       <div className="container mx-auto px-6 relative z-10">
         <motion.div

@@ -7,7 +7,7 @@ import { cvData } from "@/lib/data";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 bg-card/30">
+    <section id="projects" className="py-24 bg-card/30 scroll-mt-24">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

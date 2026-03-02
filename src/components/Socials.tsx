@@ -6,7 +6,7 @@ import { cvData } from "@/lib/data";
 
 export default function Socials() {
   return (
-    <section id="socials" className="py-24 bg-card/10">
+    <section id="socials" className="py-24 bg-card/10 scroll-mt-24">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

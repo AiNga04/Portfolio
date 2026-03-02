@@ -5,7 +5,7 @@ import { cvData } from "@/lib/data";
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-background">
+    <section id="about" className="py-24 bg-background scroll-mt-24">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row gap-16 items-center">
           <motion.div
@@ -50,7 +50,7 @@ export default function About() {
             className="md:w-1/2 relative"
           >
             <div className="aspect-square rounded-3xl overflow-hidden glass p-4 relative">
-              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-accent-blue/20 to-accent-cyan/20 overflow-hidden">
+              <div className="w-full h-full rounded-2xl bg-linear-to-br from-accent-blue/20 to-accent-cyan/20 overflow-hidden">
                 <img
                   src={cvData.avatar}
                   alt={cvData.name}

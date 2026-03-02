@@ -6,7 +6,7 @@ import { cvData } from "@/lib/data";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section id="contact" className="py-24 bg-background scroll-mt-24">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -137,7 +137,7 @@ export default function Contact() {
               </div>
               <button
                 type="button"
-                className="w-full py-4 bg-gradient-to-r from-accent-blue to-accent-cyan text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-accent-cyan/20 transition-all"
+                className="w-full py-4 bg-linear-to-r from-accent-blue to-accent-cyan text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-accent-cyan/20 transition-all"
               >
                 Send Message <Send size={20} />
               </button>

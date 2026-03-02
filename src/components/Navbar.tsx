@@ -25,6 +25,30 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      if (isOpen) {
+        setIsOpen(false);
+        // Small delay to let the menu exit animation start and avoid layout shift jitter
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 150);
+      } else {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Update URL hash without jumping the page immediately
+      window.history.pushState(null, "", href);
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -38,7 +62,7 @@ export default function Navbar() {
           className="text-2xl font-bold text-gradient cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          NA
+          AN
         </motion.div>
 
         {/* Desktop Links */}
@@ -47,10 +71,11 @@ export default function Navbar() {
             <motion.a
               key={link.name}
               href={link.href}
+              onClick={(e) => scrollToSection(e, link.href)}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="hover:text-accent-cyan transition-colors font-medium"
+              className="hover:text-accent-cyan transition-colors font-medium border-b border-transparent hover:border-accent-cyan/50"
             >
               {link.name}
             </motion.a>
@@ -75,14 +100,14 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass"
+            className="md:hidden glass overflow-hidden"
           >
             <div className="px-6 py-8 flex flex-col space-y-6">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => scrollToSection(e, link.href)}
                   className="text-xl font-medium hover:text-accent-cyan transition-colors"
                 >
                   {link.name}
