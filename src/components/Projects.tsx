@@ -59,8 +59,8 @@ export default function Projects() {
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-accent-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
 
-                {/* Quick Actions Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-30 px-6">
+                {/* Quick Actions Overlay (Desktop only) */}
+                <div className="absolute inset-0 hidden lg:flex items-center justify-center gap-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-30 px-6">
                   <div className="flex gap-4 p-2 bg-black/40 backdrop-blur-xl rounded-2xl border border-white/10">
                     <a
                       href={project.githubUrl}
@@ -101,6 +101,26 @@ export default function Projects() {
                 <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-2 min-h-[44px]">
                   {project.description}
                 </p>
+
+                {/* Mobile/Tablet Quick Actions */}
+                <div className="flex lg:hidden gap-3 mb-6">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-white/5 active:bg-white/10 rounded-xl border border-white/10 text-white text-[13px] font-semibold transition-colors"
+                  >
+                    <Github size={16} /> Code
+                  </a>
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-accent-cyan/10 active:bg-accent-cyan/20 rounded-xl border border-accent-cyan/20 text-accent-cyan text-[13px] font-semibold transition-colors"
+                  >
+                    <ExternalLink size={16} /> Demo
+                  </a>
+                </div>
 
                 <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
                   {project.tech.slice(0, 3).map((t) => (
