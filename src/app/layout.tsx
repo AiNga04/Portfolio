@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ainga04.github.io"),
+  metadataBase: new URL("https://ainga2k4.vercel.app/"),
   title: `${cvData.name} | ${cvData.title}`,
   description: cvData.tagline,
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Portfolio",
     "Creative Developer",
     "Sinh viên HCMUTE",
-    "Lập trình viên giao diện"
+    "Lập trình viên giao diện",
   ],
   openGraph: {
     title: `${cvData.name} | ${cvData.title}`,
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: `${cvData.name} Portfolio`,
     images: [
       {
-        url: cvData.avatar,
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: `${cvData.name} Portfolio`,
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${cvData.name} | ${cvData.title}`,
     description: cvData.tagline,
-    images: [cvData.avatar],
+    images: ["/og-image.png"],
   },
 };
 
@@ -66,7 +66,7 @@ export default function RootLayout({
       cvData.contact.linkedin,
       cvData.contact.github,
       "https://www.facebook.com/truong.ai.nga.2025/",
-      "https://www.instagram.com/ainga_76"
+      "https://www.instagram.com/ainga_76",
     ],
     jobTitle: cvData.title,
     worksFor: {
