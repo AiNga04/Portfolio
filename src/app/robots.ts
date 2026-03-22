@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://yourportfolio.vercel.app/sitemap.xml",
+    sitemap: "https://ainga04.github.io/Portfolio/sitemap.xml",
   };
 }
