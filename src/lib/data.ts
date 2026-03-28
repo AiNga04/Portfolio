@@ -2,21 +2,21 @@ import { CVData } from "@/types";
 
 export const cvData: CVData = {
   name: "TRƯƠNG ÁI NGA",
-  title: "Frontend Developer",
-  roles: ["Frontend Developer", "HCMUTE Student", "Passionate Tech Learner"],
+  title: "Fullstack Developer",
+  roles: ["Web Developer", "HCMUTE Student", "Fullstack Developer"],
   tagline:
-    "Hi, I'm Trương Ái Nga, a passionate web developer! I specialize in front-end development with a keen interest in creating intuitive and user-friendly web applications.",
+    "Hi, I'm Trương Ái Nga, a passionate full-stack developer! I specialize in building end-to-end web applications with professional frontend interfaces and robust backend systems.",
   avatar: "/assets/images/Ái Nga.jpg",
   about: {
     summary:
-      "I specialize in modern frontend development with React, Next.js, and TypeScript, building scalable and user-focused web applications. With strong fundamentals in HTML, CSS, and JavaScript, I emphasize clean architecture, performance optimization, and responsive UI design.",
+      "I specialize in modern full-stack development, bridging the gap between elegant user interfaces and scalable server-side architectures. With expertise in React, Next.js, and TypeScript on the frontend, combined with Spring Boot and Node.js on the backend, I build seamless, production-ready applications.",
     strengths: [
       "Component-Oriented",
       "Responsive Design",
       "Performance-Aware",
       "Detail-Oriented",
     ],
-    goal: "I also prioritize security in frontend development by implementing best practices against XSS attacks, managing authentication flows securely, optimizing data handling, and collaborating effectively with backend systems. I believe great user experiences must be both visually refined and technically secure.",
+    goal: "I also prioritize security across the full-stack, implementing robust authentication with JWT/RBAC, protecting against XSS/CSRF, and ensuring secure data handling from the browser to the database. I believe great user experiences must be both visually refined and fundamentally secure at every layer.",
   },
   skills: [
     // Frontend - Core
@@ -118,7 +118,7 @@ export const cvData: CVData = {
       icon: "/assets/images/fpt_logo.webp",
     },
     {
-      role: "Frontend Developer (Freelance)",
+      role: "Web Developer (Freelance)",
       company: "viec24h.vn",
       duration: "Jun 2025 - Aug 2025",
       responsibilities: [

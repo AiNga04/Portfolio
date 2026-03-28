@@ -15,14 +15,12 @@ export const metadata: Metadata = {
   keywords: [
     "Trương Ái Nga",
     "Ai Nga",
+    "Fullstack Developer",
     "Frontend Developer",
+    "Backend Developer",
     "Web Developer",
-    "React Developer",
-    "Next.js Developer",
     "Portfolio",
     "Creative Developer",
-    "Sinh viên HCMUTE",
-    "Lập trình viên giao diện",
   ],
   openGraph: {
     title: `${cvData.name} | ${cvData.title}`,
