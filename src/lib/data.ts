@@ -135,17 +135,6 @@ export const cvData: CVData = {
         "shadcn/ui",
       ],
     },
-    {
-      role: "Web Developer (Internship)",
-      company: "BiziBusiness",
-      duration: "May 2025 - Jun 2025",
-      responsibilities: [
-        "Developed and customized websites using WordPress to meet marketing agency requirements.",
-        "Managed content updates and optimized site performance for results-driven marketing.",
-        "Collaborated with the design team to implement responsive and visually appealing layouts.",
-      ],
-      tech: ["WordPress", "PHP", "CSS", "HTML"],
-    },
   ],
   projects: [
     {
