@@ -194,8 +194,8 @@ export const cvData: CVData = {
   ],
   contact: {
     email: "ainga01012004@gmail.com",
-    phone: "+84 376 600 545",
-    address: "Di An, Binh Duong, Viet Nam",
+    phone: "+84 378 798 514",
+    address: "Thủ Đức, Viet Nam",
     linkedin: "https://www.linkedin.com/in/nga-tr%C6%B0%C6%A1ng-bb62202ab/",
     github: "https://github.com/AiNga04",
     cvUrl: "/cv/resume.pdf",

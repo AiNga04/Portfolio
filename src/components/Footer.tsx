@@ -160,7 +160,7 @@ export default function Footer() {
                 <MapPin className="text-rose-500 shrink-0 mt-1" size={18} />
                 <div>
                   <p className="text-white text-sm font-medium">
-                    Di An, Binh Duong
+                    {cvData.contact.address}
                   </p>
                   <p className="text-gray-500 text-xs">Viet Nam</p>
                 </div>
