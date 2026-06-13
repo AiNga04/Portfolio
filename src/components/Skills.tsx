@@ -50,13 +50,12 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">
+          <h2 className="section-title mb-4">
             Technical <span className="text-gradient">Skills</span>
           </h2>
-          <div className="w-20 h-1.5 bg-accent-cyan mx-auto rounded-full mb-8" />
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="section-copy max-w-2xl mx-auto">
             A comprehensive overview of my technical expertise and the modern
             tools I use to build high-performance, secure, and beautiful digital
             products.
@@ -72,17 +71,17 @@ export default function Skills() {
               viewport={{ once: true }}
               transition={{ delay: catIndex * 0.1, duration: 0.5 }}
               whileHover={{ y: -10 }}
-              className={`relative group glass p-8 rounded-3xl border ${cat.border} ${cat.glow} bg-linear-to-br ${cat.color} backdrop-blur-xl transition-all duration-500 flex flex-col items-center text-center`}
+              className={`relative group glass p-6 rounded-2xl border ${cat.border} ${cat.glow} bg-linear-to-br ${cat.color} backdrop-blur-xl transition-all duration-500 flex flex-col items-center text-center`}
             >
               {/* Icon Header */}
               <div
-                className={`p-4 rounded-2xl bg-white/5 border border-white/10 mb-6 ${cat.iconColor} group-hover:scale-110 transition-transform duration-500 shadow-xl`}
+                className={`p-4 icon-tile mb-6 ${cat.iconColor} group-hover:scale-110 transition-transform duration-500 shadow-xl`}
               >
                 <cat.icon size={32} />
               </div>
 
               <h3
-                className={`text-2xl font-black mb-4 ${cat.iconColor} uppercase tracking-wider`}
+                className={`text-xl font-bold mb-4 ${cat.iconColor} uppercase`}
               >
                 {cat.name}
               </h3>
@@ -97,7 +96,7 @@ export default function Skills() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: catIndex * 0.1 + skillIndex * 0.05 }}
-                      className="px-4 py-3 bg-black/40 border border-white/5 rounded-2xl text-[13px] font-bold text-gray-200 tracking-wide hover:border-white/20 transition-all hover:bg-black/60 shadow-lg"
+                      className="px-4 py-3 bg-black/40 border border-white/5 rounded-xl text-sm font-semibold text-gray-200 hover:border-white/20 transition-all hover:bg-black/60 shadow-lg"
                     >
                       {skill.name}
                     </motion.div>
@@ -106,7 +105,7 @@ export default function Skills() {
 
               {/* Decorative background glow */}
               <div
-                className={`absolute -inset-2 rounded-4xl bg-linear-to-br ${cat.color} blur-2xl opacity-0 group-hover:opacity-100 transition-opacity -z-10`}
+                className={`absolute -inset-2 rounded-2xl bg-linear-to-br ${cat.color} blur-2xl opacity-0 group-hover:opacity-100 transition-opacity -z-10`}
               />
             </motion.div>
           ))}

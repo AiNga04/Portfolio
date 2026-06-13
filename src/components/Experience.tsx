@@ -15,10 +15,10 @@ export default function Experience() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="section-title mb-4">
             Work <span className="text-gradient">Experience</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="section-copy max-w-2xl mx-auto">
             My professional journey and the impact I&apos;ve made at various
             organizations.
           </p>
@@ -62,7 +62,7 @@ export default function Experience() {
                       </div>
                     )}
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-100 mb-1">
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-100 mb-1">
                         {exp.role}
                       </h3>
                       <div className="flex items-center gap-2 text-gray-400 font-medium">
@@ -92,7 +92,7 @@ export default function Experience() {
                   {exp.tech.map((t) => (
                     <span
                       key={t}
-                      className="px-3 py-1 bg-accent-cyan/10 border border-accent-cyan/20 rounded-full text-xs font-semibold text-accent-cyan"
+                      className="soft-chip px-3 py-1"
                     >
                       {t}
                     </span>

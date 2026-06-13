@@ -13,6 +13,17 @@ export interface Experience {
   icon?: string;
 }
 
+export interface Education {
+  school: string;
+  degree: string;
+  duration: string;
+  focus: string;
+  coursework: string[];
+  focusAreas: string[];
+  activities: string;
+  icon?: string;
+}
+
 export interface Project {
   title: string;
   description: string;
@@ -41,6 +52,7 @@ export interface CVData {
     strengths: string[];
     goal: string;
   };
+  education: Education;
   skills: Skill[];
   experience: Experience[];
   projects: Project[];

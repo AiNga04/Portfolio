@@ -1,10 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Send } from "lucide-react";
+import { Download, Github, Linkedin, Mail, Send } from "lucide-react";
 import { cvData } from "@/lib/data";
 
 export default function Contact() {
+  const emailSubject = encodeURIComponent(
+    "Portfolio inquiry - Fullstack Web Developer",
+  );
+
   return (
     <section id="contact" className="py-24 bg-background scroll-mt-24">
       <div className="container mx-auto px-6">
@@ -14,10 +18,10 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="section-title mb-4">
             Get In <span className="text-gradient">Touch</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="section-copy max-w-2xl mx-auto">
             Ready to collaborate or have a project in mind? Feel free to reach
             out through any of the platforms below.
           </p>
@@ -30,7 +34,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-6">Contact Information</h3>
 
             <a
               href={`mailto:${cvData.contact.email}`}
@@ -90,58 +94,57 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass p-8 rounded-3xl"
+            className="glass p-8 rounded-2xl flex flex-col justify-between gap-8"
           >
-            <form className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-400 mb-2"
-                >
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-cyan transition-colors"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-400 mb-2"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-cyan transition-colors"
-                  placeholder="john@example.com"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-400 mb-2"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-accent-cyan transition-colors resize-none"
-                  placeholder="How can I help you?"
-                ></textarea>
-              </div>
-              <button
-                type="button"
-                className="w-full py-4 bg-linear-to-r from-accent-blue to-accent-cyan text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-accent-cyan/20 transition-all"
+            <div>
+              <p className="text-accent-cyan font-semibold uppercase text-sm mb-4">
+                Let&apos;s work together
+              </p>
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-5">
+                Open to internship, fresher, and junior web developer
+                opportunities.
+              </h3>
+              <p className="section-copy">
+                I&apos;m interested in full-stack web development roles where I
+                can build clean interfaces, integrate reliable APIs, and apply
+                my information security background to practical products.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <a
+                href={`mailto:${cvData.contact.email}?subject=${emailSubject}`}
+                className="primary-action w-full py-4 flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-accent-cyan/20"
               >
-                Send Message <Send size={20} />
-              </button>
-            </form>
+                Email Me <Send size={20} />
+              </a>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <a
+                  href={cvData.contact.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="secondary-action py-3 hover:bg-white/10 flex items-center justify-center gap-2"
+                >
+                  <Linkedin size={18} /> LinkedIn
+                </a>
+                <a
+                  href={cvData.contact.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="secondary-action py-3 hover:bg-white/10 flex items-center justify-center gap-2"
+                >
+                  <Github size={18} /> GitHub
+                </a>
+                <a
+                  href={cvData.contact.cvUrl}
+                  download
+                  className="secondary-action py-3 hover:bg-white/10 flex items-center justify-center gap-2"
+                >
+                  <Download size={18} /> Resume
+                </a>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "About", href: "#about" },
+  { name: "Education", href: "#education" },
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
@@ -66,7 +67,7 @@ export default function Navbar() {
         </motion.div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6">
           {navLinks.map((link, index) => (
             <motion.a
               key={link.name}

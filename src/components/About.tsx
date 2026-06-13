@@ -16,13 +16,13 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="md:w-1/2"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">
+            <h2 className="section-title mb-8">
               About <span className="text-gradient">Me</span>
             </h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
+            <p className="section-copy text-gray-300 mb-6">
               {cvData.about.summary}
             </p>
-            <p className="text-gray-300 text-lg leading-relaxed mb-8">
+            <p className="section-copy text-gray-300 mb-8">
               {cvData.about.goal}
             </p>
 
@@ -50,7 +50,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="md:w-1/2 relative"
           >
-            <div className="aspect-square rounded-3xl overflow-hidden glass p-4 relative">
+            <div className="aspect-square rounded-2xl overflow-hidden glass p-4 relative">
               <div className="relative w-full h-full rounded-2xl bg-linear-to-br from-accent-blue/20 to-accent-cyan/20 overflow-hidden">
                 <Image
                   src={cvData.avatar}

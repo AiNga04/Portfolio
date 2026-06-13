@@ -31,7 +31,7 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-xl bg-linear-to-tr from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
                 <Code2 className="text-white" size={20} />
               </div>
-              <span className="text-2xl font-bold text-white tracking-tight">
+              <span className="text-2xl font-bold text-white">
                 Ái{" "}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">
                   Nga
@@ -39,9 +39,9 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-gray-400 leading-relaxed text-sm">
-              Hi, I&apos;m Truong Ai Nga, a passionate front-end developer who
-              loves crafting beautiful and functional web experiences. Always
-              eager to learn and grow in the ever-evolving tech world.
+              Fullstack web developer focused on clean interfaces, secure
+              authentication flows, and practical web applications built with
+              React, Next.js, and Spring Boot.
             </p>
             <div className="flex space-x-4">
               {cvData.socials.map((social, index) => {
@@ -71,7 +71,7 @@ export default function Footer() {
 
           {/* Column 2: Skills Summary */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-6 uppercase tracking-wider flex items-center">
+            <h3 className="text-white font-bold text-base mb-6 uppercase flex items-center">
               <span className="w-8 h-px bg-cyan-500 mr-3"></span>
               Skills
             </h3>
@@ -117,7 +117,7 @@ export default function Footer() {
 
           {/* Column 3: Hobbies */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-6 uppercase tracking-wider flex items-center">
+            <h3 className="text-white font-bold text-base mb-6 uppercase flex items-center">
               <span className="w-8 h-px bg-blue-500 mr-3"></span>
               Hobbies
             </h3>
@@ -151,7 +151,7 @@ export default function Footer() {
 
           {/* Column 4: Contact */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-6 uppercase tracking-wider flex items-center">
+            <h3 className="text-white font-bold text-base mb-6 uppercase flex items-center">
               <span className="w-8 h-px bg-indigo-500 mr-3"></span>
               Contact
             </h3>
@@ -193,14 +193,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Trương Ái Nga. All rights
             reserved.
           </p>
-          <div className="flex space-x-6 text-xs text-gray-500">
-            <a href="#" className="hover:text-white transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Terms of Service
-            </a>
-          </div>
+          <p className="text-xs text-gray-500">
+            Built with Next.js, TypeScript, and Tailwind CSS.
+          </p>
         </div>
       </div>
     </footer>

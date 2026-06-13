@@ -57,19 +57,19 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-accent-cyan font-semibold mb-6 text-lg tracking-widest uppercase"
+            className="text-accent-cyan font-semibold mb-6 text-sm md:text-base uppercase"
           >
             Welcome &bull; It&apos;s great to have you here
           </motion.p>
 
-          <h1 className="text-3xl md:text-5xl font-black mb-8 tracking-tighter">
+          <h1 className="text-4xl md:text-6xl font-black mb-8">
             Hi, I&apos;m{" "}
             <span className="text-gradient block md:inline mt-2 md:mt-0">
               {cvData.name}
             </span>
           </h1>
 
-          <div className="text-2xl md:text-4xl font-bold text-gray-300 mb-8 h-[1.2em] flex items-center justify-center">
+          <div className="text-2xl md:text-4xl font-bold text-gray-300 mb-8 min-h-[1.2em] flex items-center justify-center flex-wrap">
             <span className="text-gray-400 mr-3">I am a</span>
             <span className="text-accent-cyan relative inline-block min-w-[50px]">
               {text}
@@ -77,7 +77,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <p className="text-gray-400 text-xl font-normal mb-12 max-w-2xl mx-auto italic leading-relaxed">
+          <p className="section-copy mb-12 max-w-2xl mx-auto">
             {cvData.tagline}
           </p>
 
@@ -87,11 +87,11 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
             className="mb-16 inline-block"
           >
-            <div className="text-accent-cyan/90 text-lg font-medium glass py-4 px-8 rounded-2xl border border-white/10 shadow-2xl relative overflow-hidden group">
+            <div className="text-accent-cyan/90 text-base font-medium glass py-4 px-6 rounded-2xl border border-white/10 shadow-2xl relative overflow-hidden group">
               <span className="relative z-10 flex items-center gap-3 justify-center">
                 <span className="text-2xl text-accent-cyan/50">&ldquo;</span>
-                When you want something, all the universe conspires in helping
-                you to achieve it
+                Building secure, scalable and user-centric web applications with
+                modern full-stack technologies.
                 <span className="text-2xl text-accent-cyan/50">&rdquo;</span>
               </span>
               <div className="absolute inset-0 bg-accent-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -103,7 +103,7 @@ export default function Hero() {
               href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 bg-linear-to-r from-accent-blue to-accent-cyan text-white rounded-2xl font-bold flex items-center gap-2 shadow-xl shadow-accent-cyan/20 hover:shadow-accent-cyan/40 transition-all bg-shimmer"
+              className="primary-action px-8 py-4 flex items-center gap-2 shadow-xl shadow-accent-cyan/20 hover:shadow-accent-cyan/40 bg-shimmer"
             >
               Explore My Work <ArrowRight size={20} />
             </motion.a>
@@ -112,7 +112,7 @@ export default function Hero() {
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 bg-white/5 border border-white/10 hover:bg-white/10 rounded-2xl font-bold transition-all flex items-center gap-2 group bg-shimmer"
+              className="secondary-action px-8 py-4 hover:bg-white/10 flex items-center gap-2 group bg-shimmer"
             >
               Get Resume{" "}
               <Download

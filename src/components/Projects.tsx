@@ -15,10 +15,10 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="section-title mb-4">
             Featured <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="section-copy max-w-2xl mx-auto">
             A selection of my best work, demonstrating my technical skills and
             problem-solving abilities.
           </p>
@@ -33,13 +33,13 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -12 }}
-              className="group relative bg-[#0a0c10] rounded-4xl overflow-hidden border border-white/5 hover:border-accent-cyan/30 transition-all duration-500 shadow-2xl hover:shadow-accent-cyan/10"
+              className="group relative surface-card overflow-hidden hover:border-accent-cyan/30 transition-all duration-500 hover:shadow-accent-cyan/10"
             >
               {/* Image Container */}
               <div className="relative aspect-16/10 overflow-hidden bg-[#0d0f14]">
                 {/* Status Badge */}
                 <div className="absolute top-4 left-4 z-40 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full border border-white/10">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-300">
+                  <span className="text-xs font-bold uppercase text-gray-300">
                     {index % 2 === 0 ? "Production" : "Masterclass"}
                   </span>
                 </div>
@@ -61,7 +61,7 @@ export default function Projects() {
 
                 {/* Quick Actions Overlay (Desktop only) */}
                 <div className="absolute inset-0 hidden lg:flex items-center justify-center gap-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-30 px-6">
-                  <div className="flex gap-4 p-2 bg-black/40 backdrop-blur-xl rounded-2xl border border-white/10">
+                  <div className="flex gap-4 p-2 bg-black/40 backdrop-blur-xl rounded-xl border border-white/10">
                     <a
                       href={project.githubUrl}
                       target="_blank"
@@ -108,7 +108,7 @@ export default function Projects() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-white/5 active:bg-white/10 rounded-xl border border-white/10 text-white text-[13px] font-semibold transition-colors"
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 secondary-action text-sm active:bg-white/10"
                   >
                     <Github size={16} /> Code
                   </a>
@@ -116,7 +116,7 @@ export default function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-accent-cyan/10 active:bg-accent-cyan/20 rounded-xl border border-accent-cyan/20 text-accent-cyan text-[13px] font-semibold transition-colors"
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-accent-cyan/10 active:bg-accent-cyan/20 rounded-xl border border-accent-cyan/20 text-accent-cyan text-sm font-semibold transition-colors"
                   >
                     <ExternalLink size={16} /> Demo
                   </a>
@@ -126,13 +126,13 @@ export default function Projects() {
                   {project.tech.slice(0, 3).map((t) => (
                     <span
                       key={t}
-                      className="px-3 py-1 bg-white/5 rounded-full text-[10px] font-bold text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+                      className="px-3 py-1 bg-white/5 rounded-full text-xs font-semibold text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
                     >
                       {t}
                     </span>
                   ))}
                   {project.tech.length > 3 && (
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-[10px] font-bold text-gray-500 italic">
+                    <span className="px-3 py-1 bg-white/5 rounded-full text-xs font-semibold text-gray-500 italic">
                       +{project.tech.length - 3}
                     </span>
                   )}
