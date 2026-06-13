@@ -23,7 +23,7 @@ export default function Footer() {
       <div className="absolute inset-0 bg-linear-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] -z-10" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="container mx-auto px-6">
+      <div className="page-container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Column 1: Brand & Bio */}
           <div className="space-y-6">

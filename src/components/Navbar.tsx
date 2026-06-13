@@ -56,7 +56,7 @@ export default function Navbar() {
         scrolled ? "glass py-4 shadow-lg" : "bg-transparent py-6"
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="page-container flex justify-between items-center">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}

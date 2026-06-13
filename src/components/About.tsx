@@ -7,7 +7,7 @@ import { cvData } from "@/lib/data";
 export default function About() {
   return (
     <section id="about" className="py-24 bg-background scroll-mt-24">
-      <div className="container mx-auto px-6">
+      <div className="page-container">
         <div className="flex flex-col md:flex-row gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
