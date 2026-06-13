@@ -67,7 +67,7 @@ export default function Navbar() {
         </motion.div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-6">
           {navLinks.map((link, index) => (
             <motion.a
               key={link.name}
@@ -76,7 +76,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="hover:text-accent-cyan transition-colors font-medium border-b border-transparent hover:border-accent-cyan/50"
+              className="text-sm xl:text-base hover:text-accent-cyan transition-colors font-medium border-b border-transparent hover:border-accent-cyan/50"
             >
               {link.name}
             </motion.a>
@@ -84,7 +84,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu button */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-foreground p-2 focus:outline-none"
@@ -101,7 +101,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass overflow-hidden"
+            className="lg:hidden glass overflow-hidden"
           >
             <div className="px-6 py-8 flex flex-col space-y-6">
               {navLinks.map((link) => (

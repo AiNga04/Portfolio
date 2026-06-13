@@ -36,12 +36,12 @@ export default function Education() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto glass p-8 rounded-2xl relative overflow-hidden"
+          className="max-w-4xl mx-auto glass p-5 sm:p-8 rounded-2xl relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-40 h-40 bg-accent-cyan/5 rounded-full -mr-20 -mt-20" />
 
           <div className="relative flex flex-col md:flex-row gap-6 md:items-start md:justify-between mb-8">
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-4 min-w-0">
               <div className="p-2 rounded-xl bg-white/5 border border-white/10 shrink-0">
                 {education.icon ? (
                   <Image
@@ -55,11 +55,11 @@ export default function Education() {
                   <GraduationCap size={32} className="text-accent-cyan" />
                 )}
               </div>
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-xl md:text-2xl font-bold text-gray-100 mb-2">
                   {education.school}
                 </h3>
-                <div className="flex items-center gap-2 text-gray-300 font-medium">
+                <div className="flex items-center gap-2 text-gray-300 font-medium flex-wrap">
                   <GraduationCap size={18} className="text-accent-cyan" />
                   <span>{education.degree}</span>
                 </div>

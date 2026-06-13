@@ -24,7 +24,7 @@ export default function Footer() {
       <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="page-container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 lg:gap-12 mb-16">
           {/* Column 1: Brand & Bio */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">

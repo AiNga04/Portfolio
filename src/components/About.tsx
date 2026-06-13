@@ -8,13 +8,13 @@ export default function About() {
   return (
     <section id="about" className="py-24 bg-background scroll-mt-24">
       <div className="page-container">
-        <div className="flex flex-col md:flex-row gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="md:w-1/2"
+            className="lg:w-1/2"
           >
             <h2 className="section-title mb-8">
               About <span className="text-gradient">Me</span>
@@ -26,7 +26,7 @@ export default function About() {
               {cvData.about.goal}
             </p>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {cvData.about.strengths.map((strength, index) => (
                 <motion.div
                   key={index}
@@ -48,7 +48,7 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="md:w-1/2 relative"
+            className="lg:w-1/2 relative w-full max-w-xl"
           >
             <div className="aspect-square rounded-2xl overflow-hidden glass p-4 relative">
               <div className="relative w-full h-full rounded-2xl bg-linear-to-br from-accent-blue/20 to-accent-cyan/20 overflow-hidden">

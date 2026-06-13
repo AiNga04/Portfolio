@@ -42,7 +42,7 @@ export default function Hero() {
   }, [handleType, typingSpeed]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12">
       {/* Background decoration */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-blue/10 rounded-full blur-[128px] -z-10" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-cyan/10 rounded-full blur-[128px] -z-10" />
@@ -62,15 +62,15 @@ export default function Hero() {
             Welcome &bull; It&apos;s great to have you here
           </motion.p>
 
-          <h1 className="text-4xl md:text-6xl font-black mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-8">
             Hi, I&apos;m{" "}
             <span className="text-gradient block md:inline mt-2 md:mt-0">
               {cvData.name}
             </span>
           </h1>
 
-          <div className="text-2xl md:text-4xl font-bold text-gray-300 mb-8 min-h-[1.2em] flex items-center justify-center flex-wrap">
-            <span className="text-gray-400 mr-3">I am a</span>
+          <div className="text-2xl md:text-4xl font-bold text-gray-300 mb-8 min-h-[2.4em] sm:min-h-[1.2em] flex items-center justify-center flex-wrap gap-x-3 gap-y-2">
+            <span className="text-gray-400">I am a</span>
             <span className="text-accent-cyan relative inline-block min-w-[50px]">
               {text}
               <span className="inline-block w-[3px] h-[0.9em] bg-accent-cyan ml-1 animate-pulse align-middle" />
@@ -87,8 +87,8 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
             className="mb-16 inline-block"
           >
-            <div className="text-accent-cyan/90 text-base font-medium glass py-4 px-6 rounded-2xl border border-white/10 shadow-2xl relative overflow-hidden group">
-              <span className="relative z-10 flex items-center gap-3 justify-center">
+            <div className="text-accent-cyan/90 text-base font-medium glass py-4 px-5 sm:px-6 rounded-2xl border border-white/10 shadow-2xl relative overflow-hidden group">
+              <span className="relative z-10 flex items-center gap-3 justify-center text-center">
                 <span className="text-2xl text-accent-cyan/50">&ldquo;</span>
                 Building secure, scalable and user-centric web applications with
                 modern full-stack technologies.
@@ -98,12 +98,12 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16">
             <motion.a
               href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="primary-action px-8 py-4 flex items-center gap-2 shadow-xl shadow-accent-cyan/20 hover:shadow-accent-cyan/40 bg-shimmer"
+              className="primary-action w-full sm:w-auto px-8 py-4 flex items-center justify-center gap-2 shadow-xl shadow-accent-cyan/20 hover:shadow-accent-cyan/40 bg-shimmer"
             >
               Explore My Work <ArrowRight size={20} />
             </motion.a>
@@ -112,7 +112,7 @@ export default function Hero() {
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="secondary-action px-8 py-4 hover:bg-white/10 flex items-center gap-2 group bg-shimmer"
+              className="secondary-action w-full sm:w-auto px-8 py-4 hover:bg-white/10 flex items-center justify-center gap-2 group bg-shimmer"
             >
               Get Resume{" "}
               <Download

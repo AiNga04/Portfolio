@@ -80,8 +80,8 @@ body {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 @utility soft-chip {
@@ -117,6 +117,11 @@ body {
 }
 
 @media (min-width: 768px) {
+  .page-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .section-title {
     font-size: 2.25rem;
     line-height: 2.5rem;

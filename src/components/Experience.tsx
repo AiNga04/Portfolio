@@ -32,12 +32,12 @@ export default function Experience() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="relative pl-8 pb-12 last:pb-0 border-l border-white/10 ml-4"
+              className="relative pl-5 sm:pl-8 pb-12 last:pb-0 border-l border-white/10 ml-2 sm:ml-4"
             >
               {/* Timeline Dot */}
               <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-accent-cyan shadow-[0_0_10px_rgba(6,182,212,0.5)]" />
 
-              <div className="glass p-8 rounded-2xl relative overflow-hidden group">
+              <div className="glass p-5 sm:p-8 rounded-2xl relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-accent-cyan/10 transition-colors" />
 
                 <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 gap-6">
@@ -61,7 +61,7 @@ export default function Experience() {
                         <Briefcase size={24} />
                       </div>
                     )}
-                    <div>
+                    <div className="min-w-0">
                       <h3 className="text-xl md:text-2xl font-bold text-gray-100 mb-1">
                         {exp.role}
                       </h3>
@@ -80,7 +80,7 @@ export default function Experience() {
                 <ul className="space-y-3 mb-8">
                   {exp.responsibilities.map((resp, i) => (
                     <li key={i} className="flex gap-3 text-gray-300">
-                      <span className="text-accent-cyan mt-1.5 shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2.5 shrink-0 text-transparent overflow-hidden">
                         •
                       </span>
                       <span>{resp}</span>

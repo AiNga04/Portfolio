@@ -62,7 +62,7 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
           {categories.map((cat, catIndex) => (
             <motion.div
               key={cat.name}
@@ -71,7 +71,7 @@ export default function Skills() {
               viewport={{ once: true }}
               transition={{ delay: catIndex * 0.1, duration: 0.5 }}
               whileHover={{ y: -10 }}
-              className={`relative group glass p-6 rounded-2xl border ${cat.border} ${cat.glow} bg-linear-to-br ${cat.color} backdrop-blur-xl transition-all duration-500 flex flex-col items-center text-center`}
+              className={`relative group glass p-5 sm:p-6 rounded-2xl border ${cat.border} ${cat.glow} bg-linear-to-br ${cat.color} backdrop-blur-xl transition-all duration-500 flex flex-col items-center text-center min-w-0`}
             >
               {/* Icon Header */}
               <div

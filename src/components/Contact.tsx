@@ -27,25 +27,27 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h3 className="text-xl md:text-2xl font-bold mb-6">Contact Information</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-6">
+              Contact Information
+            </h3>
 
             <a
               href={`mailto:${cvData.contact.email}`}
-              className="flex items-center gap-6 p-6 glass rounded-2xl hover:border-accent-cyan/50 transition-all group"
+              className="flex items-center gap-4 sm:gap-6 p-5 sm:p-6 glass rounded-2xl hover:border-accent-cyan/50 transition-all group"
             >
               <div className="w-12 h-12 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan group-hover:scale-110 transition-transform">
                 <Mail size={24} />
               </div>
-              <div>
+              <div className="min-w-0">
                 <p className="text-sm text-gray-400 font-medium">Email Me At</p>
-                <p className="text-lg font-bold text-gray-200">
+                <p className="text-base sm:text-lg font-bold text-gray-200 break-all">
                   {cvData.contact.email}
                 </p>
               </div>
@@ -55,12 +57,12 @@ export default function Contact() {
               href={cvData.contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-6 p-6 glass rounded-2xl hover:border-accent-cyan/50 transition-all group"
+              className="flex items-center gap-4 sm:gap-6 p-5 sm:p-6 glass rounded-2xl hover:border-accent-cyan/50 transition-all group"
             >
               <div className="w-12 h-12 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan group-hover:scale-110 transition-transform">
                 <Linkedin size={24} />
               </div>
-              <div>
+              <div className="min-w-0">
                 <p className="text-sm text-gray-400 font-medium">
                   Connect on LinkedIn
                 </p>
@@ -74,12 +76,12 @@ export default function Contact() {
               href={cvData.contact.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-6 p-6 glass rounded-2xl hover:border-accent-cyan/50 transition-all group"
+              className="flex items-center gap-4 sm:gap-6 p-5 sm:p-6 glass rounded-2xl hover:border-accent-cyan/50 transition-all group"
             >
               <div className="w-12 h-12 rounded-xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan group-hover:scale-110 transition-transform">
                 <Github size={24} />
               </div>
-              <div>
+              <div className="min-w-0">
                 <p className="text-sm text-gray-400 font-medium">
                   Follow on GitHub
                 </p>
@@ -94,7 +96,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass p-8 rounded-2xl flex flex-col justify-between gap-8"
+            className="glass p-5 sm:p-8 rounded-2xl flex flex-col justify-between gap-8"
           >
             <div>
               <p className="text-accent-cyan font-semibold uppercase text-sm mb-4">

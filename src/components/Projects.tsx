@@ -24,7 +24,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {cvData.projects.map((project, index) => (
             <motion.div
               key={index}
@@ -60,7 +60,7 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-accent-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
 
                 {/* Quick Actions Overlay (Desktop only) */}
-                <div className="absolute inset-0 hidden lg:flex items-center justify-center gap-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-30 px-6">
+                <div className="absolute inset-0 hidden xl:flex items-center justify-center gap-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-30 px-6">
                   <div className="flex gap-4 p-2 bg-black/40 backdrop-blur-xl rounded-xl border border-white/10">
                     <a
                       href={project.githubUrl}
@@ -85,9 +85,9 @@ export default function Projects() {
               </div>
 
               {/* Content Container */}
-              <div className="p-8">
+              <div className="p-5 sm:p-8">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold text-white group-hover:text-accent-cyan transition-colors line-clamp-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-accent-cyan transition-colors line-clamp-2">
                     {project.title}
                   </h3>
                   <div className="px-2 py-1 bg-accent-cyan/10 rounded-md border border-accent-cyan/20">
@@ -103,7 +103,7 @@ export default function Projects() {
                 </p>
 
                 {/* Mobile/Tablet Quick Actions */}
-                <div className="flex lg:hidden gap-3 mb-6">
+                <div className="flex xl:hidden gap-3 mb-6">
                   <a
                     href={project.githubUrl}
                     target="_blank"

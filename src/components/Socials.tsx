@@ -23,7 +23,7 @@ export default function Socials() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
           {cvData.socials.map((social, index) => (
             <motion.a
               key={index}
