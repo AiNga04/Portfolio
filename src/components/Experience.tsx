@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Briefcase, Calendar } from "lucide-react";
 import { cvData } from "@/lib/data";
 
@@ -43,10 +44,12 @@ export default function Experience() {
                   <div className="flex items-start gap-4">
                     {exp.icon ? (
                       <div className="p-2 rounded-xl bg-white/5 border border-white/10 shrink-0">
-                        <img
+                        <Image
                           src={exp.icon}
                           alt={exp.company}
-                          className="w-12 h-12 object-contain rounded-lg"
+                          width={48}
+                          height={48}
+                          className="object-contain rounded-lg"
                           onError={(e) => {
                             (e.target as HTMLImageElement).style.display =
                               "none";

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { cvData } from "@/lib/data";
 
 export default function About() {
@@ -50,11 +51,14 @@ export default function About() {
             className="md:w-1/2 relative"
           >
             <div className="aspect-square rounded-3xl overflow-hidden glass p-4 relative">
-              <div className="w-full h-full rounded-2xl bg-linear-to-br from-accent-blue/20 to-accent-cyan/20 overflow-hidden">
-                <img
+              <div className="relative w-full h-full rounded-2xl bg-linear-to-br from-accent-blue/20 to-accent-cyan/20 overflow-hidden">
+                <Image
                   src={cvData.avatar}
                   alt={cvData.name}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-500 hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>
