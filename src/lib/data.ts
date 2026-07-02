@@ -116,6 +116,15 @@ export const cvData: CVData = {
   ],
   projects: [
     {
+      title: "LensHub Digital Rental",
+      description:
+        "Digital rental platform for browsing rental items, presenting product details, and supporting a smooth customer-facing rental experience through a responsive web interface.",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Rental Platform"],
+      githubUrl: "https://github.com/AiNga04/digital-rental",
+      liveUrl: "https://www.lenshub.shop/",
+      image: "/projects/digital-rental.png",
+    },
+    {
       title: "Zyna E-Commerce Frontend",
       description:
         "Frontend for an e-commerce and learning platform with product browsing, responsive pages, reusable UI components, and API-driven data flows built with Next.js and React Query.",
