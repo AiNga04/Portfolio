@@ -41,34 +41,23 @@ export const cvData: CVData = {
     icon: "/assets/images/hcmute_logo.png",
   },
   skills: [
-    // Frontend - Core
-    { name: "HTML5 / CSS3 / SCSS", category: "Frontend" },
-    { name: "JavaScript (ES6+) / TypeScript", category: "Frontend" },
-
-    // Frontend - Frameworks & Libs
-    { name: "React.js / Next.js (App Router)", category: "Frontend" },
-    { name: "Redux Toolkit / Context API", category: "Frontend" },
+    { name: "React.js / Next.js", category: "Frontend" },
+    { name: "TypeScript / JavaScript", category: "Frontend" },
     { name: "TanStack Query / Axios", category: "Frontend" },
 
-    // UI & Styling
-    { name: "Tailwind CSS / Bootstrap 5", category: "Styling" },
-    { name: "shadcn/ui / Ant Design / MUI", category: "Styling" },
-    { name: "Framer Motion", category: "Styling" },
+    { name: "Tailwind CSS / shadcn/ui", category: "Styling" },
+    { name: "Ant Design / MUI", category: "Styling" },
+    { name: "Responsive UI / Motion", category: "Styling" },
 
-    // Backend (Foundation)
-    { name: "Node.js / NestJS (REST API)", category: "Backend" },
-    { name: "Spring Boot", category: "Backend" },
-    { name: "MySQL / PostgreSQL / MongoDB", category: "Backend" },
+    { name: "Spring Boot / Java", category: "Backend" },
+    { name: "NestJS / Node.js", category: "Backend" },
+    { name: "PostgreSQL / Redis", category: "Backend" },
     { name: "JWT / RBAC", category: "Backend" },
 
-    // Tools & DevOps
     { name: "Git / GitHub / Docker", category: "Other Skills" },
-    { name: "Vercel / CI/CD concepts", category: "Other Skills" },
     { name: "Postman / Figma", category: "Other Skills" },
-
-    // Soft Skills
-    { name: "Agile / Scrum / Teamwork", category: "Other Skills" },
-    { name: "Problem-Solving / Research", category: "Other Skills" },
+    { name: "VNPay / MinIO / SMTP", category: "Other Skills" },
+    { name: "Agile / Teamwork", category: "Other Skills" },
   ],
   experience: [
     {
@@ -118,11 +107,14 @@ export const cvData: CVData = {
     {
       title: "LensHub Digital Rental",
       description:
-        "Digital rental platform for browsing rental items, presenting product details, and supporting a smooth customer-facing rental experience through a responsive web interface.",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Rental Platform"],
+        "Graduation thesis full-stack rental platform with AI eKYC verification, VNPay checkout, RBAC dashboards, encrypted API payloads, and complete rental workflows.",
+      tech: ["AI eKYC", "VNPay", "RBAC", "E2EE", "Rental Workflow"],
       githubUrl: "https://github.com/AiNga04/digital-rental",
       liveUrl: "https://www.lenshub.shop/",
       image: "/projects/digital-rental.png",
+      badge: "Graduation Thesis",
+      highlights: ["AI eKYC", "VNPay", "RBAC", "E2EE"],
+      featured: true,
     },
     {
       title: "Zyna E-Commerce Frontend",
@@ -181,7 +173,7 @@ export const cvData: CVData = {
   ],
   contact: {
     email: "ainga01012004@gmail.com",
-    phone: "+84 378 798 514",
+    phone: "0376600545",
     address: "Thủ Đức, Viet Nam",
     linkedin: "https://www.linkedin.com/in/nga-tr%C6%B0%C6%A1ng-bb62202ab/",
     github: "https://github.com/AiNga04",

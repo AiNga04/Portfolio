@@ -31,6 +31,9 @@ export interface Project {
   githubUrl: string;
   liveUrl: string;
   image: string;
+  badge?: string;
+  highlights?: string[];
+  featured?: boolean;
 }
 
 export interface Social {

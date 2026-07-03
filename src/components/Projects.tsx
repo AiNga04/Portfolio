@@ -33,14 +33,17 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -12 }}
-              className="group relative surface-card overflow-hidden hover:border-accent-cyan/30 transition-all duration-500 hover:shadow-accent-cyan/10"
+              className={`group relative surface-card overflow-hidden hover:border-accent-cyan/30 transition-all duration-500 hover:shadow-accent-cyan/10 ${
+                project.featured ? "md:col-span-2 xl:col-span-1 border-accent-cyan/30" : ""
+              }`}
             >
               {/* Image Container */}
               <div className="relative aspect-16/10 overflow-hidden bg-[#0d0f14]">
                 {/* Status Badge */}
                 <div className="absolute top-4 left-4 z-40 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full border border-white/10">
                   <span className="text-xs font-bold uppercase text-gray-300">
-                    {index % 2 === 0 ? "Production" : "Masterclass"}
+                    {project.badge ??
+                      (index % 2 === 0 ? "Production" : "Masterclass")}
                   </span>
                 </div>
 
@@ -101,6 +104,16 @@ export default function Projects() {
                 <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-2 min-h-[44px]">
                   {project.description}
                 </p>
+
+                {project.highlights && (
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.highlights.map((highlight) => (
+                      <span key={highlight} className="soft-chip px-3 py-1">
+                        {highlight}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
                 {/* Mobile/Tablet Quick Actions */}
                 <div className="flex xl:hidden gap-3 mb-6">
