@@ -177,7 +177,7 @@ export const cvData: CVData = {
     address: "Thủ Đức, Viet Nam",
     linkedin: "https://www.linkedin.com/in/nga-tr%C6%B0%C6%A1ng-bb62202ab/",
     github: "https://github.com/AiNga04",
-    cvUrl: "/cv/resume.pdf",
+    cvUrl: "/cv/truong-ai-nga-resume.pdf",
   },
   hobbies: [
     { name: "Reading Technology Blogs", icon: "book" },
