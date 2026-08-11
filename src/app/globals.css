@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0f172a;
-  --color-foreground: #e5e7eb;
-  --color-card: #111827;
-  --color-accent-sapphire: #0f172a;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-accent-sapphire: var(--accent-sapphire);
   --color-accent-blue: #3b82f6;
   --color-accent-cyan: #06b6d4;
 
@@ -30,20 +30,83 @@
 }
 
 :root {
+  color-scheme: light;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #eef4fb;
+  --card-foreground: #111827;
+  --accent-sapphire: #eaf2fb;
+  --muted: #e2e8f0;
+  --muted-foreground: #475569;
+  --subtle-foreground: #64748b;
+  --border: rgba(15, 23, 42, 0.1);
+  --border-strong: rgba(15, 23, 42, 0.16);
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --glass-shadow: 0 18px 45px rgba(15, 23, 42, 0.1);
+  --surface-bg: rgba(255, 255, 255, 0.78);
+  --surface-border: rgba(15, 23, 42, 0.1);
+  --surface-shadow: 0 18px 45px rgba(15, 23, 42, 0.09);
+  --inner-bg: rgba(241, 245, 249, 0.78);
+  --inner-bg-hover: rgba(226, 232, 240, 0.82);
+  --footer-start: #f8fafc;
+  --footer-mid: #edf5ff;
+  --footer-end: #f8fafc;
+  --image-panel: #e2e8f0;
+  --project-fade: rgba(248, 250, 252, 0.96);
+  --shimmer-highlight: rgba(255, 255, 255, 0.6);
+}
+
+.dark {
+  color-scheme: dark;
   --background: #0f172a;
   --foreground: #e5e7eb;
+  --card: #111827;
+  --card-foreground: #f9fafb;
+  --accent-sapphire: #0f172a;
+  --muted: #1f2937;
+  --muted-foreground: #9ca3af;
+  --subtle-foreground: #6b7280;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --glass-bg: rgba(17, 24, 39, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  --surface-bg: rgba(10, 12, 16, 0.45);
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --surface-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
+  --inner-bg: rgba(0, 0, 0, 0.4);
+  --inner-bg-hover: rgba(0, 0, 0, 0.6);
+  --footer-start: #0f172a;
+  --footer-mid: #1e293b;
+  --footer-end: #0f172a;
+  --image-panel: #0d0f14;
+  --project-fade: rgba(10, 12, 16, 0.94);
+  --shimmer-highlight: rgba(255, 255, 255, 0.4);
+}
+
+html {
+  background: var(--background);
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
+  transition:
+    background-color 250ms ease,
+    color 250ms ease;
 }
 
 @utility glass {
-  background: rgba(17, 24, 39, 0.7);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease,
+    color 250ms ease;
 }
 
 @utility text-gradient {
@@ -63,16 +126,44 @@ body {
 }
 
 @utility section-copy {
-  color: #9ca3af;
+  color: var(--muted-foreground);
   font-size: 1rem;
   line-height: 1.75rem;
 }
 
+@utility text-primary {
+  color: var(--card-foreground);
+}
+
+@utility text-secondary {
+  color: var(--muted-foreground);
+}
+
+@utility text-subtle {
+  color: var(--subtle-foreground);
+}
+
+@utility border-theme {
+  border-color: var(--border);
+}
+
+@utility bg-section {
+  background-color: var(--background);
+}
+
+@utility bg-section-soft {
+  background-color: color-mix(in srgb, var(--card) 58%, transparent);
+}
+
 @utility surface-card {
   border-radius: 1rem;
-  background: rgba(10, 12, 16, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
+  background: var(--surface-bg);
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--surface-shadow);
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
 }
 
 @utility page-container {
@@ -96,8 +187,37 @@ body {
 
 @utility icon-tile {
   border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  border: 1px solid var(--border);
+}
+
+@utility inner-surface {
+  background: var(--inner-bg);
+  border: 1px solid var(--border);
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease;
+}
+
+@utility inner-surface-hover {
+  background: var(--inner-bg-hover);
+}
+
+@utility footer-surface {
+  background: linear-gradient(
+    to bottom right,
+    var(--footer-start),
+    var(--footer-mid),
+    var(--footer-end)
+  );
+}
+
+@utility project-fade {
+  background: linear-gradient(to top, var(--project-fade), transparent);
+}
+
+@utility image-panel {
+  background-color: var(--image-panel);
 }
 
 @utility primary-action {
@@ -110,8 +230,8 @@ body {
 
 @utility secondary-action {
   border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  border: 1px solid var(--border);
   font-weight: 700;
   transition: all 200ms ease;
 }
@@ -148,7 +268,7 @@ body {
       to bottom right,
       rgba(255, 255, 255, 0) 0%,
       rgba(255, 255, 255, 0) 40%,
-      rgba(255, 255, 255, 0.4) 50%,
+      var(--shimmer-highlight) 50%,
       rgba(255, 255, 255, 0) 60%,
       rgba(255, 255, 255, 0) 100%
     );

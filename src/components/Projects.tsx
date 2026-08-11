@@ -7,7 +7,7 @@ import { cvData } from "@/lib/data";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 bg-card/30 scroll-mt-24">
+    <section id="projects" className="py-24 bg-section-soft scroll-mt-24">
       <div className="page-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,10 +38,10 @@ export default function Projects() {
               }`}
             >
               {/* Image Container */}
-              <div className="relative aspect-16/10 overflow-hidden bg-[#0d0f14]">
+              <div className="relative aspect-16/10 overflow-hidden image-panel">
                 {/* Status Badge */}
-                <div className="absolute top-4 left-4 z-40 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full border border-white/10">
-                  <span className="text-xs font-bold uppercase text-gray-300">
+                <div className="absolute top-4 left-4 z-40 px-3 py-1 bg-[color-mix(in_srgb,var(--background)_78%,transparent)] backdrop-blur-md rounded-full border border-theme">
+                  <span className="text-xs font-bold uppercase text-primary">
                     {project.badge ??
                       (index % 2 === 0 ? "Production" : "Masterclass")}
                   </span>
@@ -53,10 +53,10 @@ export default function Projects() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover opacity-50 group-hover:opacity-100 transition-all duration-500"
+                    className="object-cover opacity-70 group-hover:opacity-100 transition-all duration-500 dark:opacity-50"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#0a0c10] via-transparent to-transparent z-20 opacity-80" />
+                  <div className="absolute inset-0 project-fade z-20 opacity-80" />
                 </div>
 
                 {/* Hover Overlay */}
@@ -64,24 +64,24 @@ export default function Projects() {
 
                 {/* Quick Actions Overlay (Desktop only) */}
                 <div className="absolute inset-0 hidden xl:flex items-center justify-center gap-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-30 px-6">
-                  <div className="flex gap-4 p-2 bg-black/40 backdrop-blur-xl rounded-xl border border-white/10">
+                  <div className="flex gap-4 p-2 bg-[color-mix(in_srgb,var(--background)_55%,transparent)] backdrop-blur-xl rounded-xl border border-theme">
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-white/5 hover:bg-accent-cyan/20 rounded-xl transition-all hover:scale-110 border border-white/10"
+                      className="p-3 secondary-action hover:bg-accent-cyan/20 hover:scale-110"
                       title="View Code"
                     >
-                      <Github size={20} className="text-white" />
+                      <Github size={20} />
                     </a>
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-white/5 hover:bg-accent-cyan/20 rounded-xl transition-all hover:scale-110 border border-white/10"
+                      className="p-3 secondary-action hover:bg-accent-cyan/20 hover:scale-110"
                       title="Live Demo"
                     >
-                      <ExternalLink size={20} className="text-white" />
+                      <ExternalLink size={20} />
                     </a>
                   </div>
                 </div>
@@ -90,7 +90,7 @@ export default function Projects() {
               {/* Content Container */}
               <div className="p-5 sm:p-8">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-accent-cyan transition-colors line-clamp-2">
+                  <h3 className="text-lg sm:text-xl font-bold text-primary group-hover:text-accent-cyan transition-colors line-clamp-2">
                     {project.title}
                   </h3>
                   <div className="px-2 py-1 bg-accent-cyan/10 rounded-md border border-accent-cyan/20">
@@ -101,7 +101,7 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-2 min-h-[44px]">
+                <p className="text-secondary text-sm leading-relaxed mb-6 line-clamp-2 min-h-[44px]">
                   {project.description}
                 </p>
 
@@ -121,7 +121,7 @@ export default function Projects() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 secondary-action text-sm active:bg-white/10"
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 secondary-action text-sm active:bg-accent-cyan/10"
                   >
                     <Github size={16} /> Code
                   </a>
@@ -135,17 +135,17 @@ export default function Projects() {
                   </a>
                 </div>
 
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-theme">
                   {project.tech.slice(0, 3).map((t) => (
                     <span
                       key={t}
-                      className="px-3 py-1 bg-white/5 rounded-full text-xs font-semibold text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+                      className="px-3 py-1 bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] rounded-full text-xs font-semibold text-secondary hover:text-primary hover:bg-[color-mix(in_srgb,var(--foreground)_9%,transparent)] transition-colors"
                     >
                       {t}
                     </span>
                   ))}
                   {project.tech.length > 3 && (
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-xs font-semibold text-gray-500 italic">
+                    <span className="px-3 py-1 bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] rounded-full text-xs font-semibold text-subtle italic">
                       +{project.tech.length - 3}
                     </span>
                   )}

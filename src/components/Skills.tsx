@@ -43,7 +43,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-24 bg-background relative overflow-hidden scroll-mt-24"
+      className="py-24 bg-section relative overflow-hidden scroll-mt-24"
     >
       <div className="page-container relative z-10">
         <motion.div
@@ -96,7 +96,7 @@ export default function Skills() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: catIndex * 0.1 + skillIndex * 0.05 }}
-                      className="px-4 py-3 bg-black/40 border border-white/5 rounded-xl text-sm font-semibold text-gray-200 hover:border-white/20 transition-all hover:bg-black/60 shadow-lg"
+                      className="px-4 py-3 inner-surface rounded-xl text-sm font-semibold text-primary hover:inner-surface-hover transition-all shadow-lg"
                     >
                       {skill.name}
                     </motion.div>

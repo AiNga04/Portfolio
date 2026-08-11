@@ -10,7 +10,7 @@ export default function Contact() {
   );
 
   return (
-    <section id="contact" className="py-24 bg-background scroll-mt-24">
+    <section id="contact" className="py-24 bg-section scroll-mt-24">
       <div className="page-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,8 +46,8 @@ export default function Contact() {
                 <Mail size={24} />
               </div>
               <div className="min-w-0">
-                <p className="text-sm text-gray-400 font-medium">Email Me At</p>
-                <p className="text-base sm:text-lg font-bold text-gray-200 break-all">
+                <p className="text-sm text-secondary font-medium">Email Me At</p>
+                <p className="text-base sm:text-lg font-bold text-primary break-all">
                   {cvData.contact.email}
                 </p>
               </div>
@@ -63,10 +63,10 @@ export default function Contact() {
                 <Linkedin size={24} />
               </div>
               <div className="min-w-0">
-                <p className="text-sm text-gray-400 font-medium">
+                <p className="text-sm text-secondary font-medium">
                   Connect on LinkedIn
                 </p>
-                <p className="text-lg font-bold text-gray-200">
+                <p className="text-lg font-bold text-primary">
                   Professional Profile
                 </p>
               </div>
@@ -82,10 +82,10 @@ export default function Contact() {
                 <Github size={24} />
               </div>
               <div className="min-w-0">
-                <p className="text-sm text-gray-400 font-medium">
+                <p className="text-sm text-secondary font-medium">
                   Follow on GitHub
                 </p>
-                <p className="text-lg font-bold text-gray-200">
+                <p className="text-lg font-bold text-primary">
                   Open Source Projects
                 </p>
               </div>
@@ -102,7 +102,7 @@ export default function Contact() {
               <p className="text-accent-cyan font-semibold uppercase text-sm mb-4">
                 Let&apos;s work together
               </p>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-5">
+              <h3 className="text-2xl md:text-3xl font-bold text-primary mb-5">
                 Open to internship, fresher, and junior web developer
                 opportunities.
               </h3>
@@ -126,7 +126,7 @@ export default function Contact() {
                   href={cvData.contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="secondary-action py-3 hover:bg-white/10 flex items-center justify-center gap-2"
+                  className="secondary-action py-3 hover:bg-accent-cyan/10 flex items-center justify-center gap-2"
                 >
                   <Linkedin size={18} /> LinkedIn
                 </a>
@@ -134,14 +134,14 @@ export default function Contact() {
                   href={cvData.contact.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="secondary-action py-3 hover:bg-white/10 flex items-center justify-center gap-2"
+                  className="secondary-action py-3 hover:bg-accent-cyan/10 flex items-center justify-center gap-2"
                 >
                   <Github size={18} /> GitHub
                 </a>
                 <a
                   href={cvData.contact.cvUrl}
                   download
-                  className="secondary-action py-3 hover:bg-white/10 flex items-center justify-center gap-2"
+                  className="secondary-action py-3 hover:bg-accent-cyan/10 flex items-center justify-center gap-2"
                 >
                   <Download size={18} /> Resume
                 </a>

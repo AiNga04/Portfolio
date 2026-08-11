@@ -15,7 +15,7 @@ export default function Education() {
   const education = cvData.education;
 
   return (
-    <section id="education" className="py-24 bg-card/10 scroll-mt-24">
+    <section id="education" className="py-24 bg-section-soft scroll-mt-24">
       <div className="page-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ export default function Education() {
 
           <div className="relative flex flex-col md:flex-row gap-6 md:items-start md:justify-between mb-8">
             <div className="flex items-start gap-4 min-w-0">
-              <div className="p-2 rounded-xl bg-white/5 border border-white/10 shrink-0">
+              <div className="p-2 rounded-xl icon-tile shrink-0">
                 {education.icon ? (
                   <Image
                     src={education.icon}
@@ -56,10 +56,10 @@ export default function Education() {
                 )}
               </div>
               <div className="min-w-0">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-100 mb-2">
+                <h3 className="text-xl md:text-2xl font-bold text-primary mb-2">
                   {education.school}
                 </h3>
-                <div className="flex items-center gap-2 text-gray-300 font-medium flex-wrap">
+                <div className="flex items-center gap-2 text-secondary font-medium flex-wrap">
                   <GraduationCap size={18} className="text-accent-cyan" />
                   <span>{education.degree}</span>
                 </div>
@@ -77,7 +77,7 @@ export default function Education() {
 
           <div className="relative grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8">
             <div>
-              <div className="flex items-center gap-2 text-white font-bold mb-4">
+              <div className="flex items-center gap-2 text-primary font-bold mb-4">
                 <BookOpen size={18} className="text-accent-cyan" />
                 <span>Relevant Coursework</span>
               </div>
@@ -85,7 +85,7 @@ export default function Education() {
                 {education.coursework.map((course) => (
                   <div
                     key={course}
-                    className="flex items-center gap-3 px-4 py-3 bg-black/30 border border-white/5 rounded-xl text-gray-300"
+                    className="flex items-center gap-3 px-4 py-3 inner-surface rounded-xl text-secondary"
                   >
                     <span className="w-2 h-2 rounded-full bg-accent-cyan shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
                     <span className="font-medium">{course}</span>
@@ -95,7 +95,7 @@ export default function Education() {
             </div>
 
             <div>
-              <div className="flex items-center gap-2 text-white font-bold mb-4">
+              <div className="flex items-center gap-2 text-primary font-bold mb-4">
                 <ShieldCheck size={18} className="text-accent-cyan" />
                 <span>Focus Areas</span>
               </div>
@@ -110,11 +110,11 @@ export default function Education() {
                 ))}
               </div>
 
-              <div className="flex items-center gap-2 text-white font-bold mb-4">
+              <div className="flex items-center gap-2 text-primary font-bold mb-4">
                 <Code2 size={18} className="text-accent-cyan" />
                 <span>Activities</span>
               </div>
-              <div className="px-4 py-4 bg-accent-cyan/5 border border-accent-cyan/10 rounded-xl text-gray-300 leading-relaxed">
+              <div className="px-4 py-4 bg-accent-cyan/5 border border-accent-cyan/10 rounded-xl text-secondary leading-relaxed">
                 {education.activities}
               </div>
             </div>

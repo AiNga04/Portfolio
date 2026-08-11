@@ -7,7 +7,7 @@ import { cvData } from "@/lib/data";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-background scroll-mt-24">
+    <section id="experience" className="py-24 bg-section scroll-mt-24">
       <div className="page-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export default function Experience() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="relative pl-5 sm:pl-8 pb-12 last:pb-0 border-l border-white/10 ml-2 sm:ml-4"
+              className="relative pl-5 sm:pl-8 pb-12 last:pb-0 border-l border-theme ml-2 sm:ml-4"
             >
               {/* Timeline Dot */}
               <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-accent-cyan shadow-[0_0_10px_rgba(6,182,212,0.5)]" />
@@ -43,7 +43,7 @@ export default function Experience() {
                 <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 gap-6">
                   <div className="flex items-start gap-4">
                     {exp.icon ? (
-                      <div className="p-2 rounded-xl bg-white/5 border border-white/10 shrink-0">
+                      <div className="p-2 rounded-xl icon-tile shrink-0">
                         <Image
                           src={exp.icon}
                           alt={exp.company}
@@ -62,10 +62,10 @@ export default function Experience() {
                       </div>
                     )}
                     <div className="min-w-0">
-                      <h3 className="text-xl md:text-2xl font-bold text-gray-100 mb-1">
+                      <h3 className="text-xl md:text-2xl font-bold text-primary mb-1">
                         {exp.role}
                       </h3>
-                      <div className="flex items-center gap-2 text-gray-400 font-medium">
+                      <div className="flex items-center gap-2 text-secondary font-medium">
                         <Briefcase size={16} />
                         <span>{exp.company}</span>
                       </div>
@@ -79,7 +79,7 @@ export default function Experience() {
 
                 <ul className="space-y-3 mb-8">
                   {exp.responsibilities.map((resp, i) => (
-                    <li key={i} className="flex gap-3 text-gray-300">
+                    <li key={i} className="flex gap-3 text-secondary">
                       <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2.5 shrink-0 text-transparent overflow-hidden">
                         •
                       </span>

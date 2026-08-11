@@ -6,7 +6,7 @@ import { cvData } from "@/lib/data";
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-background scroll-mt-24">
+    <section id="about" className="py-24 bg-section scroll-mt-24">
       <div className="page-container">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           <motion.div
@@ -19,10 +19,10 @@ export default function About() {
             <h2 className="section-title mb-8">
               About <span className="text-gradient">Me</span>
             </h2>
-            <p className="section-copy text-gray-300 mb-6">
+            <p className="section-copy mb-6">
               {cvData.about.summary}
             </p>
-            <p className="section-copy text-gray-300 mb-8">
+            <p className="section-copy mb-8">
               {cvData.about.goal}
             </p>
 
@@ -34,10 +34,10 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + index * 0.1 }}
-                  className="flex items-center gap-3 glass p-3 rounded-xl border border-white/5 hover:border-accent-cyan/30 transition-colors"
+                  className="flex items-center gap-3 glass p-3 rounded-xl hover:border-accent-cyan/30 transition-colors"
                 >
                   <div className="w-2 h-2 rounded-full bg-accent-cyan shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
-                  <span className="text-gray-200 font-medium">{strength}</span>
+                  <span className="text-primary font-medium">{strength}</span>
                 </motion.div>
               ))}
             </div>

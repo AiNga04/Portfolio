@@ -6,7 +6,7 @@ import { cvData } from "@/lib/data";
 
 export default function Socials() {
   return (
-    <section id="socials" className="py-24 bg-card/10 scroll-mt-24">
+    <section id="socials" className="py-24 bg-section-soft scroll-mt-24">
       <div className="page-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export default function Socials() {
                 rotateX: -5,
                 scale: 1.05,
               }}
-              className="group relative surface-card p-6 hover:border-white/20 transition-all duration-500 flex flex-col items-center text-center hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+              className="group relative surface-card p-6 hover:border-accent-cyan/30 transition-all duration-500 flex flex-col items-center text-center"
               style={{ perspective: "1000px" }}
             >
               {/* Glow Effect */}
@@ -55,7 +55,7 @@ export default function Socials() {
                   className="absolute inset-0 rounded-2xl blur-xl opacity-40 group-hover:opacity-100 transition-opacity duration-500"
                   style={{ backgroundColor: social.color }}
                 />
-                <div className="relative w-full h-full rounded-2xl overflow-hidden bg-black/40 border border-white/10 shadow-inner">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden inner-surface shadow-inner">
                   <Image
                     src={social.icon}
                     alt={social.platform}
@@ -76,7 +76,7 @@ export default function Socials() {
               </h3>
 
               {/* Description */}
-              <p className="text-gray-400 text-sm leading-relaxed z-10">
+              <p className="text-secondary text-sm leading-relaxed z-10">
                 {social.description}
               </p>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { cvData } from "@/lib/data";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ainga2k4.vercel.app/"),
@@ -48,6 +49,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeScript = `
+    (function() {
+      try {
+        var storageKey = "portfolio-theme";
+        var theme = localStorage.getItem(storageKey) || "system";
+        if (theme !== "light" && theme !== "dark" && theme !== "system") theme = "system";
+        var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var resolved = theme === "system" ? (systemDark ? "dark" : "light") : theme;
+        var root = document.documentElement;
+        root.classList.remove("light", "dark");
+        root.classList.add(resolved);
+        root.dataset.theme = theme;
+        root.style.colorScheme = resolved;
+      } catch (error) {}
+    })();
+  `;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -70,6 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -79,7 +98,7 @@ export default function RootLayout({
         className="font-sans antialiased bg-background text-foreground"
         suppressHydrationWarning
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

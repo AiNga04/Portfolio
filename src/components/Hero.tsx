@@ -69,8 +69,8 @@ export default function Hero() {
             </span>
           </h1>
 
-          <div className="text-2xl md:text-4xl font-bold text-gray-300 mb-8 min-h-[2.4em] sm:min-h-[1.2em] flex items-center justify-center flex-wrap gap-x-3 gap-y-2">
-            <span className="text-gray-400">I am a</span>
+          <div className="text-2xl md:text-4xl font-bold text-primary mb-8 min-h-[2.4em] sm:min-h-[1.2em] flex items-center justify-center flex-wrap gap-x-3 gap-y-2">
+            <span className="text-secondary">I am a</span>
             <span className="text-accent-cyan relative inline-block min-w-[50px]">
               {text}
               <span className="inline-block w-[3px] h-[0.9em] bg-accent-cyan ml-1 animate-pulse align-middle" />
@@ -87,7 +87,7 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
             className="mb-16 inline-block"
           >
-            <div className="text-accent-cyan/90 text-base font-medium glass py-4 px-5 sm:px-6 rounded-2xl border border-white/10 shadow-2xl relative overflow-hidden group">
+            <div className="text-accent-cyan/90 text-base font-medium glass py-4 px-5 sm:px-6 rounded-2xl shadow-2xl relative overflow-hidden group">
               <span className="relative z-10 flex items-center gap-3 justify-center text-center">
                 <span className="text-2xl text-accent-cyan/50">&ldquo;</span>
                 Building secure, scalable and user-centric web applications with
@@ -112,7 +112,7 @@ export default function Hero() {
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="secondary-action w-full sm:w-auto px-8 py-4 hover:bg-white/10 flex items-center justify-center gap-2 group bg-shimmer"
+              className="secondary-action w-full sm:w-auto px-8 py-4 hover:bg-accent-cyan/10 flex items-center justify-center gap-2 group bg-shimmer"
             >
               Get Resume{" "}
               <Download
@@ -125,21 +125,21 @@ export default function Hero() {
           <div className="flex items-center justify-center gap-6">
             <a
               href={cvData.contact.github}
-              className="text-gray-400 hover:text-accent-cyan transition-colors"
+              className="text-secondary hover:text-accent-cyan transition-colors"
               aria-label="GitHub"
             >
               <Github size={28} />
             </a>
             <a
               href={cvData.contact.linkedin}
-              className="text-gray-400 hover:text-accent-cyan transition-colors"
+              className="text-secondary hover:text-accent-cyan transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin size={28} />
             </a>
             <a
               href={`mailto:${cvData.contact.email}`}
-              className="text-gray-400 hover:text-accent-cyan transition-colors"
+              className="text-secondary hover:text-accent-cyan transition-colors"
               aria-label="Email"
             >
               <Mail size={28} />
@@ -155,7 +155,7 @@ export default function Hero() {
         transition={{ delay: 1, duration: 2, repeat: Infinity }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
-        <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center p-1">
+        <div className="w-6 h-10 border-2 border-theme rounded-full flex justify-center p-1">
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
