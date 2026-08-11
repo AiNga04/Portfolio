@@ -53,8 +53,8 @@ export default function RootLayout({
     (function() {
       try {
         var storageKey = "portfolio-theme";
-        var theme = localStorage.getItem(storageKey) || "system";
-        if (theme !== "light" && theme !== "dark" && theme !== "system") theme = "system";
+        var theme = localStorage.getItem(storageKey) || "dark";
+        if (theme !== "light" && theme !== "dark" && theme !== "system") theme = "dark";
         var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
         var resolved = theme === "system" ? (systemDark ? "dark" : "light") : theme;
         var root = document.documentElement;

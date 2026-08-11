@@ -53,10 +53,10 @@ export default function Projects() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover opacity-70 group-hover:opacity-100 transition-all duration-500 dark:opacity-50"
+                    className="object-cover opacity-100 transition-transform duration-500 dark:opacity-50 dark:group-hover:opacity-100"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 project-fade z-20 opacity-80" />
+                  <div className="absolute inset-0 project-fade project-image-shade z-20" />
                 </div>
 
                 {/* Hover Overlay */}
