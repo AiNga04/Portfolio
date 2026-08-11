@@ -21,9 +21,9 @@ export const cvData: CVData = {
   education: {
     school: "Ho Chi Minh City University of Technology and Education (HCMUTE)",
     degree: "B.Eng. in Information Security",
-    duration: "2022 - Present",
+    duration: "2022 - 2026",
     focus:
-      "Studying Information Security with a practical focus on secure web applications, backend systems, and modern full-stack development.",
+      "Information Security major with practical training in secure web applications, backend systems, and modern full-stack development.",
     coursework: [
       "Web Programming",
       "Web Application Security",
@@ -37,7 +37,7 @@ export const cvData: CVData = {
       "Backend System Design",
     ],
     activities:
-      "Built multiple academic and personal projects using React, Next.js, Spring Boot, and NestJS.",
+      "GPA 8.12/10 (3.34/4.0). Completed all degree requirements and awaiting graduation confirmation.",
     icon: "/assets/images/hcmute_logo.png",
   },
   skills: [
