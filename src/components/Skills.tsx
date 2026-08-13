@@ -8,34 +8,18 @@ const categories = [
   {
     name: "Frontend",
     icon: Layout,
-    color: "from-blue-500/20 to-cyan-500/20",
-    border: "border-blue-500/50",
-    glow: "shadow-blue-500/20",
-    iconColor: "text-blue-400",
   },
   {
     name: "Backend",
     icon: Database,
-    color: "from-purple-500/20 to-pink-500/20",
-    border: "border-purple-500/50",
-    glow: "shadow-purple-500/20",
-    iconColor: "text-purple-400",
   },
   {
     name: "Styling",
     icon: Zap,
-    color: "from-emerald-500/20 to-teal-500/20",
-    border: "border-emerald-500/50",
-    glow: "shadow-emerald-500/20",
-    iconColor: "text-emerald-400",
   },
   {
     name: "Other Skills",
     icon: Cpu,
-    color: "from-orange-500/20 to-amber-500/20",
-    border: "border-orange-500/50",
-    glow: "shadow-orange-500/20",
-    iconColor: "text-orange-400",
   },
 ] as const;
 
@@ -71,18 +55,16 @@ export default function Skills() {
               viewport={{ once: true }}
               transition={{ delay: catIndex * 0.1, duration: 0.5 }}
               whileHover={{ y: -10 }}
-              className={`relative group glass p-5 sm:p-6 rounded-2xl border ${cat.border} ${cat.glow} bg-linear-to-br ${cat.color} backdrop-blur-xl transition-all duration-500 flex flex-col items-center text-center min-w-0`}
+              className="group surface-card flex min-w-0 flex-col items-center p-5 text-center transition-all duration-500 sm:p-6"
             >
               {/* Icon Header */}
               <div
-                className={`p-4 icon-tile mb-6 ${cat.iconColor} group-hover:scale-110 transition-transform duration-500 shadow-xl`}
+                className="icon-tile mb-6 p-4 text-accent-cyan transition-transform duration-500 group-hover:scale-110"
               >
                 <cat.icon size={32} />
               </div>
 
-              <h3
-                className={`text-xl font-bold mb-4 ${cat.iconColor} uppercase`}
-              >
+              <h3 className="display-serif mb-4 text-2xl text-primary">
                 {cat.name}
               </h3>
 
@@ -96,17 +78,12 @@ export default function Skills() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: catIndex * 0.1 + skillIndex * 0.05 }}
-                      className="px-4 py-3 inner-surface rounded-xl text-sm font-semibold text-primary hover:inner-surface-hover transition-all shadow-lg"
+                      className="inner-surface rounded-full px-4 py-3 text-sm font-semibold text-primary shadow-sm transition-all hover:inner-surface-hover"
                     >
                       {skill.name}
                     </motion.div>
                   ))}
               </div>
-
-              {/* Decorative background glow */}
-              <div
-                className={`absolute -inset-2 rounded-2xl bg-linear-to-br ${cat.color} blur-2xl opacity-0 group-hover:opacity-100 transition-opacity -z-10`}
-              />
             </motion.div>
           ))}
         </div>

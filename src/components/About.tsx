@@ -34,9 +34,9 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + index * 0.1 }}
-                  className="flex items-center gap-3 glass p-3 rounded-xl hover:border-accent-cyan/30 transition-colors"
+                  className="inner-surface flex items-center gap-3 rounded-full p-3 transition-colors hover:inner-surface-hover"
                 >
-                  <div className="w-2 h-2 rounded-full bg-accent-cyan shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
+                  <div className="h-2 w-2 rounded-full bg-accent-cyan" />
                   <span className="text-primary font-medium">{strength}</span>
                 </motion.div>
               ))}
@@ -50,8 +50,8 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="lg:w-1/2 relative w-full max-w-xl"
           >
-            <div className="aspect-square rounded-2xl overflow-hidden glass p-4 relative">
-              <div className="relative w-full h-full rounded-2xl bg-linear-to-br from-accent-blue/20 to-accent-cyan/20 overflow-hidden">
+            <div className="surface-card relative aspect-square overflow-hidden p-3">
+              <div className="image-panel relative h-full w-full overflow-hidden rounded-[1rem]">
                 <Image
                   src={cvData.avatar}
                   alt={cvData.name}
@@ -62,9 +62,6 @@ export default function About() {
                 />
               </div>
             </div>
-            {/* Decorative element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent-cyan/10 rounded-full blur-3xl -z-10" />
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-accent-blue/10 rounded-full blur-3xl -z-10" />
           </motion.div>
         </div>
       </div>

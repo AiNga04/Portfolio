@@ -53,35 +53,47 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "glass py-4 shadow-lg" : "bg-transparent py-6"
+      className={`fixed top-0 w-full z-50 border-b border-theme transition-all duration-300 ${
+        scrolled ? "glass py-3" : "bg-[color-mix(in_srgb,var(--background)_88%,transparent)] py-4"
       }`}
     >
       <div className="page-container flex justify-between items-center">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-bold text-gradient cursor-pointer"
+          className="group flex cursor-pointer items-center gap-3"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          AN
+          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-theme bg-[color-mix(in_srgb,var(--background)_72%,transparent)] display-serif text-lg text-accent-cyan shadow-sm transition-transform group-hover:-translate-y-0.5">
+            AN
+          </span>
+          <span className="hidden sm:block">
+            <span className="block text-xs font-bold uppercase tracking-[0.24em] text-primary">
+              Portfolio
+            </span>
+            <span className="display-serif text-sm italic text-accent-cyan">
+              fullstack developer
+            </span>
+          </span>
         </motion.div>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-5 xl:gap-6">
-          {navLinks.map((link, index) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => scrollToSection(e, link.href)}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="text-sm xl:text-base hover:text-accent-cyan transition-colors font-medium border-b border-transparent hover:border-accent-cyan/50"
-            >
-              {link.name}
-            </motion.a>
-          ))}
+        <div className="hidden lg:flex items-center gap-3">
+          <div className="flex items-center gap-1 rounded-full border border-theme bg-[color-mix(in_srgb,var(--background)_74%,transparent)] p-1.5 shadow-sm">
+            {navLinks.map((link, index) => (
+              <motion.a
+                key={link.name}
+                href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.08 }}
+                className="rounded-full px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] text-secondary transition-colors hover:bg-accent-cyan hover:text-white xl:px-4"
+              >
+                {link.name}
+              </motion.a>
+            ))}
+          </div>
           <ThemeToggle />
         </div>
 
@@ -89,7 +101,8 @@ export default function Navbar() {
         <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-foreground p-2 focus:outline-none"
+            className="rounded-full border border-theme bg-[color-mix(in_srgb,var(--background)_72%,transparent)] p-2 text-foreground focus:outline-none"
+            aria-label="Toggle navigation menu"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -103,7 +116,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden glass overflow-hidden"
+            className="lg:hidden overflow-hidden border-b border-theme bg-[color-mix(in_srgb,var(--background)_94%,transparent)] backdrop-blur-xl"
           >
             <div className="px-6 py-8 flex flex-col space-y-6">
               {navLinks.map((link) => (
@@ -111,7 +124,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="text-xl font-medium hover:text-accent-cyan transition-colors"
+                  className="display-serif text-2xl text-primary hover:text-accent-cyan transition-colors"
                 >
                   {link.name}
                 </a>

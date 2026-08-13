@@ -109,7 +109,7 @@ export const cvData: CVData = {
       description:
         "Graduation thesis full-stack rental platform with AI eKYC verification, VNPay checkout, RBAC dashboards, encrypted API payloads, and complete rental workflows.",
       tech: ["AI eKYC", "VNPay", "RBAC", "E2EE", "Rental Workflow"],
-      githubUrl: "https://github.com/AiNga04/digital-rental",
+      githubUrl: "https://github.com/ZzZueszZ/digital-rental",
       liveUrl: "https://www.lenshub.shop/",
       image: "/projects/digital-rental.png",
       badge: "Graduation Thesis",

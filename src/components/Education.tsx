@@ -36,10 +36,8 @@ export default function Education() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto glass p-5 sm:p-8 rounded-2xl relative overflow-hidden"
+          className="surface-card relative mx-auto max-w-4xl overflow-hidden p-5 sm:p-8"
         >
-          <div className="absolute top-0 right-0 w-40 h-40 bg-accent-cyan/5 rounded-full -mr-20 -mt-20" />
-
           <div className="relative flex flex-col md:flex-row gap-6 md:items-start md:justify-between mb-8">
             <div className="flex items-start gap-4 min-w-0">
               <div className="p-2 rounded-xl icon-tile shrink-0">
@@ -69,7 +67,7 @@ export default function Education() {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-accent-cyan font-medium shrink-0 bg-accent-cyan/5 px-4 py-2 rounded-xl border border-accent-cyan/10">
+            <div className="flex shrink-0 items-center gap-2 rounded-full border border-theme bg-[color-mix(in_srgb,var(--background)_62%,transparent)] px-4 py-2 font-medium text-accent-cyan">
               <Calendar size={18} />
               <span>{education.duration}</span>
             </div>
@@ -85,9 +83,9 @@ export default function Education() {
                 {education.coursework.map((course) => (
                   <div
                     key={course}
-                    className="flex items-center gap-3 px-4 py-3 inner-surface rounded-xl text-secondary"
+                    className="inner-surface flex items-center gap-3 rounded-full px-4 py-3 text-secondary"
                   >
-                    <span className="w-2 h-2 rounded-full bg-accent-cyan shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
+                    <span className="h-2 w-2 rounded-full bg-accent-cyan" />
                     <span className="font-medium">{course}</span>
                   </div>
                 ))}
@@ -114,7 +112,7 @@ export default function Education() {
                 <Code2 size={18} className="text-accent-cyan" />
                 <span>Activities</span>
               </div>
-              <div className="px-4 py-4 bg-accent-cyan/5 border border-accent-cyan/10 rounded-xl text-secondary leading-relaxed">
+              <div className="inner-surface rounded-2xl px-4 py-4 leading-relaxed text-secondary">
                 {education.activities}
               </div>
             </div>

@@ -42,42 +42,43 @@ export default function Hero() {
   }, [handleType, typingSpeed]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12">
-      {/* Background decoration */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-blue/10 rounded-full blur-[128px] -z-10" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-cyan/10 rounded-full blur-[128px] -z-10" />
+    <section className="relative min-h-screen overflow-hidden pt-28 pb-16 md:pt-36">
+      <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(to_right,transparent,var(--border-strong),transparent)]" />
 
-      <div className="page-container text-center">
+      <div className="page-container flex min-h-[calc(100vh-9rem)] items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mx-auto max-w-4xl text-center"
         >
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-accent-cyan font-semibold mb-6 text-sm md:text-base uppercase"
+            className="eyebrow mb-6"
           >
-            Welcome &bull; It&apos;s great to have you here
+            Portfolio &bull; Fullstack Web Developer
           </motion.p>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-8">
-            Hi, I&apos;m{" "}
-            <span className="text-gradient block md:inline mt-2 md:mt-0">
+          <h1 className="display-serif mx-auto mb-8 max-w-3xl text-5xl leading-[0.98] text-primary sm:text-6xl md:text-7xl lg:text-8xl">
+            Hi, I&apos;m
+            <span className="mt-2 block italic text-accent-cyan">
               {cvData.name}
             </span>
           </h1>
 
-          <div className="text-2xl md:text-4xl font-bold text-primary mb-8 min-h-[2.4em] sm:min-h-[1.2em] flex items-center justify-center flex-wrap gap-x-3 gap-y-2">
-            <span className="text-secondary">I am a</span>
-            <span className="text-accent-cyan relative inline-block min-w-[50px]">
+          <div className="mb-8 flex min-h-[52px] flex-wrap items-center justify-center gap-3">
+            <span className="rounded-full border border-theme bg-[color-mix(in_srgb,var(--background)_68%,transparent)] px-4 py-2 text-sm font-bold uppercase tracking-[0.16em] text-secondary">
+              I am a
+            </span>
+            <span className="display-serif relative inline-flex min-w-[260px] items-center rounded-full border border-theme bg-[color-mix(in_srgb,var(--card)_52%,transparent)] px-5 py-2 text-2xl italic text-accent-cyan shadow-sm">
               {text}
               <span className="inline-block w-[3px] h-[0.9em] bg-accent-cyan ml-1 animate-pulse align-middle" />
             </span>
           </div>
 
-          <p className="section-copy mb-12 max-w-2xl mx-auto">
+          <p className="section-copy mx-auto mb-8 max-w-2xl">
             {cvData.tagline}
           </p>
 
@@ -85,25 +86,22 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
-            className="mb-16 inline-block"
+            className="mx-auto mb-10 max-w-2xl"
           >
-            <div className="text-accent-cyan/90 text-base font-medium glass py-4 px-5 sm:px-6 rounded-2xl shadow-2xl relative overflow-hidden group">
-              <span className="relative z-10 flex items-center gap-3 justify-center text-center">
-                <span className="text-2xl text-accent-cyan/50">&ldquo;</span>
+            <div className="rounded-2xl border border-theme bg-[color-mix(in_srgb,var(--background)_62%,transparent)] px-5 py-4 shadow-sm">
+              <span className="display-serif text-xl italic leading-relaxed text-primary">
                 Building secure, scalable and user-centric web applications with
                 modern full-stack technologies.
-                <span className="text-2xl text-accent-cyan/50">&rdquo;</span>
               </span>
-              <div className="absolute inset-0 bg-accent-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
           </motion.div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16">
+          <div className="mb-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
             <motion.a
               href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="primary-action w-full sm:w-auto px-8 py-4 flex items-center justify-center gap-2 shadow-xl shadow-accent-cyan/20 hover:shadow-accent-cyan/40 bg-shimmer"
+              className="primary-action flex w-full items-center justify-center gap-2 px-8 py-4 shadow-xl shadow-accent-cyan/15 hover:-translate-y-0.5 hover:shadow-accent-cyan/25 sm:w-auto"
             >
               Explore My Work <ArrowRight size={20} />
             </motion.a>
@@ -112,7 +110,7 @@ export default function Hero() {
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="secondary-action w-full sm:w-auto px-8 py-4 hover:bg-accent-cyan/10 flex items-center justify-center gap-2 group bg-shimmer"
+              className="secondary-action group flex w-full items-center justify-center gap-2 px-8 py-4 text-primary hover:bg-accent-cyan/10 sm:w-auto"
             >
               Get Resume{" "}
               <Download
@@ -122,27 +120,27 @@ export default function Hero() {
             </motion.a>
           </div>
 
-          <div className="flex items-center justify-center gap-6">
+          <div className="flex items-center justify-center gap-4">
             <a
               href={cvData.contact.github}
-              className="text-secondary hover:text-accent-cyan transition-colors"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-theme text-secondary transition-colors hover:border-accent-cyan/40 hover:text-accent-cyan"
               aria-label="GitHub"
             >
-              <Github size={28} />
+              <Github size={20} />
             </a>
             <a
               href={cvData.contact.linkedin}
-              className="text-secondary hover:text-accent-cyan transition-colors"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-theme text-secondary transition-colors hover:border-accent-cyan/40 hover:text-accent-cyan"
               aria-label="LinkedIn"
             >
-              <Linkedin size={28} />
+              <Linkedin size={20} />
             </a>
             <a
               href={`mailto:${cvData.contact.email}`}
-              className="text-secondary hover:text-accent-cyan transition-colors"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-theme text-secondary transition-colors hover:border-accent-cyan/40 hover:text-accent-cyan"
               aria-label="Email"
             >
-              <Mail size={28} />
+              <Mail size={20} />
             </a>
           </div>
         </motion.div>
