@@ -43,7 +43,7 @@ function applyTheme(mode: ThemeMode) {
 
 function getStoredTheme(): ThemeMode {
   if (typeof window === "undefined") {
-    return "dark";
+    return "light";
   }
 
   const storedTheme = localStorage.getItem(STORAGE_KEY);
@@ -51,7 +51,7 @@ function getStoredTheme(): ThemeMode {
     storedTheme === "dark" ||
     storedTheme === "system"
     ? storedTheme
-    : "dark";
+    : "light";
 }
 
 function getThemeSnapshot() {
@@ -61,7 +61,7 @@ function getThemeSnapshot() {
 }
 
 function getServerThemeSnapshot() {
-  return "dark:dark";
+  return "light:light";
 }
 
 function subscribeToThemeChanges(callback: () => void) {
