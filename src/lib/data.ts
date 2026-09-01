@@ -84,24 +84,6 @@ export const cvData: CVData = {
       ],
       icon: "/assets/images/fpt_logo.webp",
     },
-    {
-      role: "Web Developer (Freelance)",
-      company: "viec24h.vn",
-      duration: "Jun 2025 - Aug 2025",
-      responsibilities: [
-        "Built responsive dashboard interfaces using React, Next.js, TypeScript, and Tailwind CSS.",
-        "Integrated REST APIs and improved data loading flows with Axios and reusable UI components.",
-        "Collaborated with clients to refine user flows and deliver practical dashboard features.",
-      ],
-      tech: [
-        "React",
-        "Next.js",
-        "Tailwind CSS",
-        "TypeScript",
-        "Axios",
-        "shadcn/ui",
-      ],
-    },
   ],
   projects: [
     {

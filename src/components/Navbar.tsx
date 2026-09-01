@@ -54,7 +54,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 border-b border-theme transition-all duration-300 ${
-        scrolled ? "glass py-3" : "bg-[color-mix(in_srgb,var(--background)_88%,transparent)] py-4"
+        scrolled ? "glass py-3" : "bg-[color-mix(in_srgb,var(--background)_90%,transparent)] py-4"
       }`}
     >
       <div className="page-container flex justify-between items-center">
@@ -64,22 +64,22 @@ export default function Navbar() {
           className="group flex cursor-pointer items-center gap-3"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-theme bg-[color-mix(in_srgb,var(--background)_72%,transparent)] display-serif text-lg text-accent-cyan shadow-sm transition-transform group-hover:-translate-y-0.5">
+          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-accent-blue to-accent-cyan text-lg font-black text-white shadow-lg shadow-accent-cyan/20 transition-transform group-hover:-translate-y-0.5">
             AN
           </span>
           <span className="hidden sm:block">
-            <span className="block text-xs font-bold uppercase tracking-[0.24em] text-primary">
-              Portfolio
+            <span className="block text-sm font-black uppercase tracking-[0.16em] text-primary">
+              Ai Nga
             </span>
-            <span className="display-serif text-sm italic text-accent-cyan">
-              fullstack developer
+            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-secondary">
+              secure web portfolio
             </span>
           </span>
         </motion.div>
 
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-3">
-          <div className="flex items-center gap-1 rounded-full border border-theme bg-[color-mix(in_srgb,var(--background)_74%,transparent)] p-1.5 shadow-sm">
+          <div className="flex items-center gap-1 rounded-xl border border-theme bg-[color-mix(in_srgb,var(--background)_76%,transparent)] p-1.5 shadow-sm">
             {navLinks.map((link, index) => (
               <motion.a
                 key={link.name}
@@ -88,7 +88,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.08 }}
-                className="rounded-full px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] text-secondary transition-colors hover:bg-accent-cyan hover:text-white xl:px-4"
+                className="rounded-lg px-3 py-2 text-xs font-bold uppercase tracking-[0.1em] text-secondary transition-colors hover:bg-accent-cyan hover:text-white xl:px-4"
               >
                 {link.name}
               </motion.a>
@@ -101,7 +101,7 @@ export default function Navbar() {
         <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="rounded-full border border-theme bg-[color-mix(in_srgb,var(--background)_72%,transparent)] p-2 text-foreground focus:outline-none"
+            className="rounded-xl border border-theme bg-[color-mix(in_srgb,var(--background)_72%,transparent)] p-2 text-foreground focus:outline-none"
             aria-label="Toggle navigation menu"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -124,7 +124,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="display-serif text-2xl text-primary hover:text-accent-cyan transition-colors"
+                  className="text-xl font-bold text-primary hover:text-accent-cyan transition-colors"
                 >
                   {link.name}
                 </a>

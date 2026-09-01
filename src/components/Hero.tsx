@@ -2,8 +2,29 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react";
+import {
+  ArrowRight,
+  Github,
+  Linkedin,
+  Mail,
+  Download,
+  ShieldCheck,
+  ServerCog,
+  Code2,
+} from "lucide-react";
 import { cvData } from "@/lib/data";
+
+const heroStats = [
+  { label: "Graduation Thesis", value: "LensHub" },
+  { label: "Core Stack", value: "Next + Spring" },
+  { label: "Security Focus", value: "JWT/RBAC" },
+];
+
+const focusItems = [
+  { label: "Full-stack", icon: Code2 },
+  { label: "Secure APIs", icon: ShieldCheck },
+  { label: "Backend Systems", icon: ServerCog },
+];
 
 export default function Hero() {
   const [text, setText] = useState("");
@@ -43,14 +64,15 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen overflow-hidden pt-28 pb-16 md:pt-36">
-      <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(to_right,transparent,var(--border-strong),transparent)]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,var(--background),color-mix(in_srgb,var(--accent-sapphire)_42%,var(--background)))]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(var(--border)_1px,transparent_1px),linear-gradient(90deg,var(--border)_1px,transparent_1px)] bg-[size:72px_72px] opacity-30" />
 
       <div className="page-container flex min-h-[calc(100vh-9rem)] items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mx-auto max-w-4xl text-center"
+          className="mx-auto max-w-5xl text-center"
         >
           <motion.p
             initial={{ opacity: 0 }}
@@ -58,21 +80,19 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="eyebrow mb-6"
           >
-            Portfolio &bull; Fullstack Web Developer
+            Portfolio &bull; Secure Fullstack Development
           </motion.p>
 
-          <h1 className="display-serif mx-auto mb-8 max-w-3xl text-5xl leading-[0.98] text-primary sm:text-6xl md:text-7xl lg:text-8xl">
-            Hi, I&apos;m
-            <span className="mt-2 block italic text-accent-cyan">
-              {cvData.name}
-            </span>
+          <h1 className="mx-auto mb-8 max-w-5xl text-5xl font-black leading-[1.02] text-primary sm:text-6xl md:text-7xl lg:text-8xl">
+            I build secure web apps with{" "}
+            <span className="text-gradient">clean product thinking.</span>
           </h1>
 
           <div className="mb-8 flex min-h-[52px] flex-wrap items-center justify-center gap-3">
-            <span className="rounded-full border border-theme bg-[color-mix(in_srgb,var(--background)_68%,transparent)] px-4 py-2 text-sm font-bold uppercase tracking-[0.16em] text-secondary">
-              I am a
+            <span className="rounded-lg border border-theme bg-[color-mix(in_srgb,var(--background)_68%,transparent)] px-4 py-2 text-sm font-bold uppercase tracking-[0.14em] text-secondary">
+              {cvData.name}
             </span>
-            <span className="display-serif relative inline-flex min-w-[260px] items-center rounded-full border border-theme bg-[color-mix(in_srgb,var(--card)_52%,transparent)] px-5 py-2 text-2xl italic text-accent-cyan shadow-sm">
+            <span className="relative inline-flex min-w-[260px] items-center rounded-lg border border-theme bg-[color-mix(in_srgb,var(--card)_72%,transparent)] px-5 py-2 text-xl font-black text-accent-cyan shadow-sm">
               {text}
               <span className="inline-block w-[3px] h-[0.9em] bg-accent-cyan ml-1 animate-pulse align-middle" />
             </span>
@@ -82,19 +102,22 @@ export default function Hero() {
             {cvData.tagline}
           </p>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4 }}
-            className="mx-auto mb-10 max-w-2xl"
-          >
-            <div className="rounded-2xl border border-theme bg-[color-mix(in_srgb,var(--background)_62%,transparent)] px-5 py-4 shadow-sm">
-              <span className="display-serif text-xl italic leading-relaxed text-primary">
-                Building secure, scalable and user-centric web applications with
-                modern full-stack technologies.
-              </span>
-            </div>
-          </motion.div>
+          <div className="mx-auto mb-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
+            {focusItems.map((item, index) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.24 + index * 0.08 }}
+                className="surface-card flex items-center justify-center gap-3 px-4 py-3"
+              >
+                <item.icon size={18} className="text-accent-cyan" />
+                <span className="text-sm font-bold text-primary">
+                  {item.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
 
           <div className="mb-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
             <motion.a
@@ -142,6 +165,22 @@ export default function Hero() {
             >
               <Mail size={20} />
             </a>
+          </div>
+
+          <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 overflow-hidden rounded-xl border border-theme bg-[color-mix(in_srgb,var(--background)_80%,transparent)] shadow-sm sm:grid-cols-3">
+            {heroStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="border-b border-theme px-5 py-4 text-left last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
+              >
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-subtle">
+                  {stat.label}
+                </p>
+                <p className="mt-1 text-lg font-black text-primary">
+                  {stat.value}
+                </p>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
