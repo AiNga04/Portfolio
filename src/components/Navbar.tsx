@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import { cvData } from "@/lib/data";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -52,59 +53,71 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 border-b border-theme transition-all duration-300 ${
-        scrolled ? "glass py-3" : "bg-[color-mix(in_srgb,var(--background)_90%,transparent)] py-4"
-      }`}
-    >
-      <div className="page-container flex justify-between items-center">
+    <nav className="fixed top-0 z-50 w-full px-3 py-4 transition-all duration-300 sm:px-5 lg:py-6">
+      <div
+        className={`mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-3xl border border-theme bg-[color-mix(in_srgb,var(--background)_86%,white_12%)] px-4 py-3 shadow-[0_20px_70px_rgba(37,99,235,0.14)] backdrop-blur-xl transition-all duration-300 dark:bg-[color-mix(in_srgb,var(--background)_78%,white_4%)] ${
+          scrolled
+            ? "max-w-5xl py-2.5 shadow-[0_16px_48px_rgba(37,99,235,0.16)]"
+            : ""
+        }`}
+      >
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="group flex cursor-pointer items-center gap-3"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-accent-blue to-accent-cyan text-lg font-black text-white shadow-lg shadow-accent-cyan/20 transition-transform group-hover:-translate-y-0.5">
+          <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-accent-blue to-accent-cyan text-lg font-black text-white shadow-lg shadow-accent-blue/20 transition-transform group-hover:-translate-y-0.5">
             AN
           </span>
-          <span className="hidden sm:block">
-            <span className="block text-sm font-black uppercase tracking-[0.16em] text-primary">
+          <span className="hidden min-[420px]:block">
+            <span className="block text-sm font-black uppercase tracking-[0.12em] text-primary">
               Ai Nga
             </span>
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-secondary">
-              secure web portfolio
+            <span className="text-xs font-semibold text-secondary">
+              Fullstack Developer
             </span>
           </span>
         </motion.div>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-3">
-          <div className="flex items-center gap-1 rounded-xl border border-theme bg-[color-mix(in_srgb,var(--background)_76%,transparent)] p-1.5 shadow-sm">
-            {navLinks.map((link, index) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.08 }}
-                className="rounded-lg px-3 py-2 text-xs font-bold uppercase tracking-[0.1em] text-secondary transition-colors hover:bg-accent-cyan hover:text-white xl:px-4"
-              >
-                {link.name}
-              </motion.a>
-            ))}
-          </div>
+        <div className="hidden items-center gap-1 lg:flex">
+          {navLinks.map((link, index) => (
+            <motion.a
+              key={link.name}
+              href={link.href}
+              onClick={(e) => scrollToSection(e, link.href)}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.06 }}
+              className="rounded-2xl px-3 py-2.5 text-sm font-bold text-secondary transition-colors hover:bg-accent-sapphire hover:text-accent-blue xl:px-4"
+            >
+              {link.name}
+            </motion.a>
+          ))}
+        </div>
+
+        <div className="hidden items-center gap-2 lg:flex">
           <ThemeToggle />
+          <a
+            href={cvData.contact.cvUrl}
+            download
+            className="primary-action flex items-center gap-2 px-5 py-3 text-sm shadow-lg shadow-accent-blue/20 hover:-translate-y-0.5 hover:shadow-accent-blue/30"
+          >
+            <Download size={17} />
+            Resume
+          </a>
         </div>
 
         {/* Mobile menu button */}
-        <div className="lg:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="rounded-xl border border-theme bg-[color-mix(in_srgb,var(--background)_72%,transparent)] p-2 text-foreground focus:outline-none"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-theme bg-[color-mix(in_srgb,var(--background)_82%,white_10%)] text-foreground shadow-sm focus:outline-none"
             aria-label="Toggle navigation menu"
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
@@ -116,22 +129,27 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden overflow-hidden border-b border-theme bg-[color-mix(in_srgb,var(--background)_94%,transparent)] backdrop-blur-xl"
+            className="mx-auto mt-3 max-w-6xl overflow-hidden rounded-3xl border border-theme bg-[color-mix(in_srgb,var(--background)_94%,white_4%)] shadow-[0_20px_60px_rgba(37,99,235,0.14)] backdrop-blur-xl lg:hidden"
           >
-            <div className="px-6 py-8 flex flex-col space-y-6">
+            <div className="flex flex-col space-y-2 px-5 py-5">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="text-xl font-bold text-primary hover:text-accent-cyan transition-colors"
+                  className="rounded-2xl px-4 py-3 text-base font-bold text-primary transition-colors hover:bg-accent-sapphire hover:text-accent-blue"
                 >
                   {link.name}
                 </a>
               ))}
-              <div className="pt-2">
-                <ThemeToggle />
-              </div>
+              <a
+                href={cvData.contact.cvUrl}
+                download
+                className="primary-action mt-3 flex items-center justify-center gap-2 px-5 py-3 text-sm"
+              >
+                <Download size={17} />
+                Download Resume
+              </a>
             </div>
           </motion.div>
         )}

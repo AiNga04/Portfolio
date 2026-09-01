@@ -29,7 +29,7 @@ export default function BackToTop() {
           whileHover={{ y: -3, scale: 1.04 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-accent-cyan text-white shadow-[0_14px_30px_rgba(62,95,45,0.28)] transition-colors hover:bg-[color-mix(in_srgb,var(--accent-cyan)_88%,black)] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="fixed bottom-28 right-7 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-accent-blue to-accent-cyan text-white shadow-[0_14px_30px_rgba(37,99,235,0.28)] transition-colors hover:brightness-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <ArrowUp size={20} strokeWidth={2.2} />
         </motion.button>
