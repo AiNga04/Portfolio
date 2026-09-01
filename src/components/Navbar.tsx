@@ -67,14 +67,14 @@ export default function Navbar() {
           className="group flex cursor-pointer items-center gap-3"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-accent-blue to-accent-cyan text-lg font-black text-white shadow-lg shadow-accent-blue/20 transition-transform group-hover:-translate-y-0.5">
+          <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-accent-blue to-accent-cyan text-lg font-semibold text-white shadow-lg shadow-accent-blue/20 transition-transform group-hover:-translate-y-0.5">
             AN
           </span>
           <span className="hidden min-[420px]:block">
-            <span className="block text-sm font-black uppercase tracking-[0.12em] text-primary">
+            <span className="block text-sm font-semibold uppercase tracking-[0.08em] text-primary">
               Ai Nga
             </span>
-            <span className="text-xs font-semibold text-secondary">
+            <span className="text-xs font-normal text-secondary">
               Fullstack Developer
             </span>
           </span>
@@ -90,7 +90,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.06 }}
-              className="rounded-2xl px-3 py-2.5 text-sm font-bold text-secondary transition-colors hover:bg-accent-sapphire hover:text-accent-blue xl:px-4"
+              className="rounded-2xl px-3 py-2.5 text-sm font-medium text-secondary transition-colors hover:bg-accent-sapphire hover:text-accent-blue xl:px-4"
             >
               {link.name}
             </motion.a>
@@ -137,7 +137,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="rounded-2xl px-4 py-3 text-base font-bold text-primary transition-colors hover:bg-accent-sapphire hover:text-accent-blue"
+                  className="rounded-2xl px-4 py-3 text-base font-medium text-primary transition-colors hover:bg-accent-sapphire hover:text-accent-blue"
                 >
                   {link.name}
                 </a>

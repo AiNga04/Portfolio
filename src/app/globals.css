@@ -8,8 +8,8 @@
   --color-accent-blue: var(--accent-blue);
   --color-accent-cyan: var(--accent-cyan);
 
-  --font-sans: Arial, Helvetica, sans-serif;
-  --font-display: Arial, Helvetica, sans-serif;
+  --font-sans: "Segoe UI", Arial, Helvetica, sans-serif;
+  --font-display: "Segoe UI", Arial, Helvetica, sans-serif;
 
   @keyframes shine {
     from {
@@ -135,13 +135,13 @@ body {
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0;
 }
 
 @utility display-serif {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0;
 }
 
@@ -149,8 +149,8 @@ body {
   color: var(--accent-cyan);
   font-size: 0.75rem;
   line-height: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.24em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -211,7 +211,7 @@ body {
   color: var(--accent-cyan);
   font-size: 0.75rem;
   line-height: 1rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @utility icon-tile {
@@ -261,7 +261,7 @@ body {
   border-radius: 0.75rem;
   background: linear-gradient(to right, var(--accent-blue), var(--accent-cyan));
   color: white;
-  font-weight: 700;
+  font-weight: 600;
   transition: all 200ms ease;
 }
 
@@ -269,7 +269,7 @@ body {
   border-radius: 0.75rem;
   background: color-mix(in srgb, var(--background) 72%, transparent);
   border: 1px solid var(--border);
-  font-weight: 700;
+  font-weight: 600;
   transition: all 200ms ease;
 }
 

@@ -83,16 +83,16 @@ export default function Hero() {
             Portfolio &bull; Secure Fullstack Development
           </motion.p>
 
-          <h1 className="mx-auto mb-8 max-w-5xl text-5xl font-black leading-[1.02] text-primary sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className="mx-auto mb-8 max-w-5xl text-5xl font-semibold leading-[1.05] text-primary sm:text-6xl md:text-7xl lg:text-8xl">
             I build secure web apps with{" "}
             <span className="text-gradient">clean product thinking.</span>
           </h1>
 
           <div className="mb-8 flex min-h-[52px] flex-wrap items-center justify-center gap-3">
-            <span className="rounded-lg border border-theme bg-[color-mix(in_srgb,var(--background)_68%,transparent)] px-4 py-2 text-sm font-bold uppercase tracking-[0.14em] text-secondary">
+            <span className="rounded-lg border border-theme bg-[color-mix(in_srgb,var(--background)_68%,transparent)] px-4 py-2 text-sm font-medium uppercase tracking-[0.1em] text-secondary">
               {cvData.name}
             </span>
-            <span className="relative inline-flex min-w-[260px] items-center rounded-lg border border-theme bg-[color-mix(in_srgb,var(--card)_72%,transparent)] px-5 py-2 text-xl font-black text-accent-cyan shadow-sm">
+            <span className="relative inline-flex min-w-[260px] items-center rounded-lg border border-theme bg-[color-mix(in_srgb,var(--card)_72%,transparent)] px-5 py-2 text-xl font-semibold text-accent-cyan shadow-sm">
               {text}
               <span className="inline-block w-[3px] h-[0.9em] bg-accent-cyan ml-1 animate-pulse align-middle" />
             </span>
@@ -112,7 +112,7 @@ export default function Hero() {
                 className="surface-card flex items-center justify-center gap-3 px-4 py-3"
               >
                 <item.icon size={18} className="text-accent-cyan" />
-                <span className="text-sm font-bold text-primary">
+                <span className="text-sm font-medium text-primary">
                   {item.label}
                 </span>
               </motion.div>
@@ -173,10 +173,10 @@ export default function Hero() {
                 key={stat.label}
                 className="border-b border-theme px-5 py-4 text-left last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
               >
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-subtle">
+                <p className="text-xs font-medium uppercase tracking-[0.12em] text-subtle">
                   {stat.label}
                 </p>
-                <p className="mt-1 text-lg font-black text-primary">
+                <p className="mt-1 text-lg font-semibold text-primary">
                   {stat.value}
                 </p>
               </div>
