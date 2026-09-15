@@ -41,23 +41,32 @@ export const cvData: CVData = {
     icon: "/assets/images/hcmute_logo.png",
   },
   skills: [
-    { name: "React.js / Next.js", category: "Frontend" },
-    { name: "TypeScript / JavaScript", category: "Frontend" },
-    { name: "TanStack Query / Axios", category: "Frontend" },
+    { name: "HTML / CSS/SCSS", category: "Front-end" },
+    { name: "JavaScript / TypeScript", category: "Front-end" },
+    { name: "React.js / Next.js", category: "Front-end" },
+    { name: "Tailwind CSS / Bootstrap", category: "Front-end" },
+    { name: "Ant Design / MUI / shadcn/ui", category: "Front-end" },
+    { name: "jQuery / TanStack / SEO", category: "Front-end" },
 
-    { name: "Tailwind CSS / shadcn/ui", category: "Styling" },
-    { name: "Ant Design / MUI", category: "Styling" },
-    { name: "Responsive UI / Motion", category: "Styling" },
+    { name: "Java / OOP", category: "Back-end" },
+    { name: "Spring Boot", category: "Back-end" },
+    { name: "Node.js / NestJS", category: "Back-end" },
+    { name: "RESTful APIs", category: "Back-end" },
+    { name: "JWT / RBAC", category: "Back-end" },
 
-    { name: "Spring Boot / Java", category: "Backend" },
-    { name: "NestJS / Node.js", category: "Backend" },
-    { name: "PostgreSQL / Redis", category: "Backend" },
-    { name: "JWT / RBAC", category: "Backend" },
+    { name: "Secure API Design", category: "Security & Integration" },
+    { name: "E2EE concepts", category: "Security & Integration" },
 
-    { name: "Git / GitHub / Docker", category: "Other Skills" },
-    { name: "Postman / Figma", category: "Other Skills" },
-    { name: "VNPay / MinIO / SMTP", category: "Other Skills" },
-    { name: "Agile / Teamwork", category: "Other Skills" },
+    { name: "MySQL / PostgreSQL / Redis", category: "Database & storage" },
+
+    { name: "Linux / Docker", category: "DevOps & Tools" },
+    { name: "CI/CD / Jenkins", category: "DevOps & Tools" },
+    { name: "Zabbix", category: "DevOps & Tools" },
+    { name: "Git / Figma / Postman", category: "DevOps & Tools" },
+
+    { name: "Agile/Scrum", category: "Other Skills" },
+    { name: "Teamwork", category: "Other Skills" },
+    { name: "Problem-Solving", category: "Other Skills" },
   ],
   experience: [
     {

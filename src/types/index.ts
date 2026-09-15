@@ -1,6 +1,12 @@
 export interface Skill {
   name: string;
-  category: "Frontend" | "Backend" | "Styling" | "Other Skills";
+  category:
+    | "Front-end"
+    | "Back-end"
+    | "Security & Integration"
+    | "Database & storage"
+    | "DevOps & Tools"
+    | "Other Skills";
   icon?: string;
 }
 

@@ -2,24 +2,39 @@
 
 import { motion } from "framer-motion";
 import { cvData } from "@/lib/data";
-import { Layout, Database, Zap, Cpu } from "lucide-react";
+import {
+  Boxes,
+  Database,
+  Layout,
+  ServerCog,
+  ShieldCheck,
+  Wrench,
+} from "lucide-react";
 
 const categories = [
   {
-    name: "Frontend",
+    name: "Front-end",
     icon: Layout,
   },
   {
-    name: "Backend",
+    name: "Back-end",
+    icon: ServerCog,
+  },
+  {
+    name: "Security & Integration",
+    icon: ShieldCheck,
+  },
+  {
+    name: "Database & storage",
     icon: Database,
   },
   {
-    name: "Styling",
-    icon: Zap,
+    name: "DevOps & Tools",
+    icon: Wrench,
   },
   {
     name: "Other Skills",
-    icon: Cpu,
+    icon: Boxes,
   },
 ] as const;
 
@@ -40,13 +55,13 @@ export default function Skills() {
             Technical <span className="text-gradient">Skills</span>
           </h2>
           <p className="section-copy max-w-2xl mx-auto">
-            A comprehensive overview of my technical expertise and the modern
-            tools I use to build high-performance, secure, and beautiful digital
-            products.
+            A focused overview of the technologies and working practices listed
+            in my CV, from front-end development to secure APIs, backend
+            systems, databases, and deployment tools.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {categories.map((cat, catIndex) => (
             <motion.div
               key={cat.name}
@@ -78,7 +93,7 @@ export default function Skills() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: catIndex * 0.1 + skillIndex * 0.05 }}
-                      className="inner-surface rounded-full px-4 py-3 text-sm font-semibold text-primary shadow-sm transition-all hover:inner-surface-hover"
+                      className="inner-surface rounded-full px-4 py-3 text-sm font-medium text-primary shadow-sm transition-all hover:inner-surface-hover"
                     >
                       {skill.name}
                     </motion.div>
