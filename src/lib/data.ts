@@ -260,7 +260,7 @@ export const cvData: CVData = {
   contact: {
     email: "ainga01012004@gmail.com",
     phone: "0376600545",
-    address: "Thủ Đức, Viet Nam",
+    address: "Thu Duc, Viet Nam",
     linkedin: "https://www.linkedin.com/in/nga-tr%C6%B0%C6%A1ng-bb62202ab/",
     github: "https://github.com/AiNga04",
     cvUrl: "/cv/truong-ai-nga-resume.pdf",
