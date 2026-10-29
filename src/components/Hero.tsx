@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpRight, Download, Code2, ShieldCheck, MapPin } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Download, Code2, ShieldCheck, MapPin, PanelsTopLeft, Sparkles, Compass } from "lucide-react";
 import { cvData } from "@/lib/data";
 
 export default function Hero() {
@@ -23,7 +23,10 @@ export default function Hero() {
 
       </div>
       <div className="portfolio-hero-values">
-        <span>Responsive interfaces</span><span>Secure applications</span><span>Thoughtful details</span><span>Always exploring</span>
+        <span><PanelsTopLeft size={23} aria-hidden="true" />Responsive interfaces</span>
+        <span><ShieldCheck size={23} aria-hidden="true" />Secure applications</span>
+        <span><Sparkles size={23} aria-hidden="true" />Thoughtful details</span>
+        <span><Compass size={23} aria-hidden="true" />Always exploring</span>
       </div>
     </section>
   );
