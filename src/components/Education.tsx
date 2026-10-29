@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import {
-  BookOpen,
   Calendar,
   Code2,
   GraduationCap,
@@ -18,7 +17,7 @@ export default function Education() {
     <section id="education" className="py-24 bg-section-soft scroll-mt-24">
       <div className="page-container">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
@@ -33,7 +32,7 @@ export default function Education() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="surface-card relative mx-auto max-w-4xl overflow-hidden p-5 sm:p-8"
@@ -73,25 +72,7 @@ export default function Education() {
             </div>
           </div>
 
-          <div className="relative grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8">
-            <div>
-              <div className="flex items-center gap-2 text-primary font-bold mb-4">
-                <BookOpen size={18} className="text-accent-cyan" />
-                <span>Relevant Coursework</span>
-              </div>
-              <div className="grid grid-cols-1 gap-3">
-                {education.coursework.map((course) => (
-                  <div
-                    key={course}
-                    className="inner-surface flex items-center gap-3 rounded-full px-4 py-3 text-secondary"
-                  >
-                    <span className="h-2 w-2 rounded-full bg-accent-cyan" />
-                    <span className="font-medium">{course}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
+          <div className="relative grid grid-cols-1 gap-8">
             <div>
               <div className="flex items-center gap-2 text-primary font-bold mb-4">
                 <ShieldCheck size={18} className="text-accent-cyan" />
@@ -110,7 +91,7 @@ export default function Education() {
 
               <div className="flex items-center gap-2 text-primary font-bold mb-4">
                 <Code2 size={18} className="text-accent-cyan" />
-                <span>Activities</span>
+                <span>Academic Status</span>
               </div>
               <div className="inner-surface rounded-2xl px-4 py-4 leading-relaxed text-secondary">
                 {education.activities}

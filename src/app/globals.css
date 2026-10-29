@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "./fonts.css";
+@import "./portfolio-theme.css";
 
 @theme inline {
   --color-background: var(--background);
@@ -32,64 +34,74 @@
 
 :root {
   color-scheme: light;
-  --background: #f4f8ff;
-  --foreground: #0f172a;
-  --card: #eef5ff;
-  --card-foreground: #111827;
-  --accent-sapphire: #e8f1ff;
-  --accent-blue: #155dfc;
-  --accent-cyan: #2f7dff;
-  --accent-gold: #38bdf8;
-  --muted: #e2e8f0;
-  --muted-foreground: #475569;
-  --subtle-foreground: #64748b;
-  --border: rgba(37, 99, 235, 0.11);
-  --border-strong: rgba(37, 99, 235, 0.2);
-  --glass-bg: rgba(255, 255, 255, 0.86);
-  --glass-border: rgba(37, 99, 235, 0.12);
-  --glass-shadow: 0 16px 42px rgba(37, 99, 235, 0.1);
-  --surface-bg: rgba(255, 255, 255, 0.9);
-  --surface-border: rgba(37, 99, 235, 0.12);
-  --surface-shadow: 0 18px 48px rgba(37, 99, 235, 0.08);
-  --inner-bg: rgba(239, 246, 255, 0.84);
-  --inner-bg-hover: rgba(219, 234, 254, 0.92);
-  --footer-start: #f4f8ff;
-  --footer-mid: #eaf2ff;
-  --footer-end: #f8fbff;
-  --image-panel: #dbeafe;
-  --project-fade: rgba(244, 248, 255, 0.62);
-  --shimmer-highlight: rgba(255, 255, 255, 0.58);
+  --background: #f5efe4;
+  --foreground: #36432b;
+  --card: #ede5d7;
+  --card-foreground: #36432b;
+  --accent-sapphire: #e5e9da;
+  --accent-blue: #405633;
+  --accent-cyan: #556b42;
+  --accent-gold: #a9794c;
+  --muted: #e6ddcf;
+  --muted-foreground: #646253;
+  --subtle-foreground: #776e5f;
+  --border: rgba(83, 87, 59, 0.18);
+  --border-strong: rgba(83, 87, 59, 0.32);
+  --glass-bg: #faf6ed;
+  --glass-border: rgba(83, 87, 59, 0.18);
+  --glass-shadow: none;
+  --surface-bg: #faf6ed;
+  --surface-border: rgba(83, 87, 59, 0.18);
+  --surface-shadow: 0 6px 20px rgba(65, 72, 44, .07);
+  --surface-hover-shadow: 0 12px 28px rgba(65, 72, 44, .12);
+  --action-bg: #405633;
+  --action-hover: #2f4325;
+  --action-text: #ffffff;
+  --footer-bg: #35472c;
+  --inner-bg: #f0eadf;
+  --inner-bg-hover: #e7e8d8;
+  --footer-start: #e9e2d3;
+  --footer-mid: #eee7da;
+  --footer-end: #e9e2d3;
+  --image-panel: #e6dece;
+  --project-fade: rgba(245, 239, 228, 0.25);
+  --shimmer-highlight: rgba(255, 255, 255, 0.3);
 }
 
 .dark {
   color-scheme: dark;
-  --background: #050b18;
-  --foreground: #eef5ff;
-  --card: #081225;
-  --card-foreground: #f9fafb;
-  --accent-sapphire: #0c1a34;
-  --accent-blue: #2f7dff;
-  --accent-cyan: #38bdf8;
-  --accent-gold: #60a5fa;
-  --muted: #13233b;
-  --muted-foreground: #a7b4c8;
-  --subtle-foreground: #74829a;
-  --border: rgba(96, 165, 250, 0.14);
-  --border-strong: rgba(96, 165, 250, 0.24);
-  --glass-bg: rgba(8, 18, 37, 0.74);
-  --glass-border: rgba(96, 165, 250, 0.16);
-  --glass-shadow: 0 18px 48px rgba(0, 0, 0, 0.36);
-  --surface-bg: rgba(8, 18, 37, 0.72);
-  --surface-border: rgba(96, 165, 250, 0.14);
-  --surface-shadow: 0 22px 56px rgba(0, 0, 0, 0.3);
-  --inner-bg: rgba(15, 23, 42, 0.74);
-  --inner-bg-hover: rgba(30, 41, 59, 0.86);
-  --footer-start: #050b18;
-  --footer-mid: #081631;
-  --footer-end: #050b18;
-  --image-panel: #0a1426;
-  --project-fade: rgba(5, 11, 24, 0.94);
-  --shimmer-highlight: rgba(255, 255, 255, 0.32);
+  --background: #171d16;
+  --foreground: #f3eee2;
+  --card: #20291e;
+  --card-foreground: #f3eee2;
+  --accent-sapphire: #303e28;
+  --accent-blue: #c5d6ab;
+  --accent-cyan: #b6cc98;
+  --accent-gold: #d4b68d;
+  --muted: #303a2b;
+  --muted-foreground: #c5c9ba;
+  --subtle-foreground: #a4af99;
+  --border: rgba(203, 216, 177, .18);
+  --border-strong: rgba(203, 216, 177, .36);
+  --glass-bg: #252e21;
+  --glass-border: rgba(203, 216, 177, .22);
+  --glass-shadow: none;
+  --surface-bg: #283223;
+  --surface-border: #47533c;
+  --surface-shadow: 0 6px 20px rgba(0, 0, 0, .16);
+  --surface-hover-shadow: 0 12px 28px rgba(0, 0, 0, .28);
+  --action-bg: #b6cc98;
+  --action-hover: #c9dbb2;
+  --action-text: #172211;
+  --inner-bg: #303a2b;
+  --inner-bg-hover: #3b4833;
+  --footer-bg: #0e150d;
+  --footer-start: #0e150d;
+  --footer-mid: #0e150d;
+  --footer-end: #0e150d;
+  --image-panel: #303a2b;
+  --project-fade: rgba(23, 29, 22, .18);
+  --shimmer-highlight: rgba(255, 255, 255, .12);
 }
 
 html {
@@ -250,7 +262,7 @@ body {
 }
 
 .dark .project-image-shade {
-  opacity: 0.8;
+  opacity: 0.18;
 }
 
 @utility image-panel {

@@ -1,0 +1,139 @@
+/* Shared layout and typography; theme colors come from semantic variables. */
+:root .portfolio-hero { display: block; padding-top: 9.5rem; }
+:root body { font-family: "Inter", Arial, sans-serif; }
+:root .text-gradient {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--accent-blue);
+  animation: none;
+}
+:root :is(.section-title, .display-serif) {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+:root .section-title { font-size: clamp(2.5rem, 5vw, 4rem); }
+:root .eyebrow { color: var(--accent-gold); letter-spacing: 0.2em; font-weight: 500; }
+:root :is(.primary-action, .secondary-action) {
+  border-radius: 999px;
+  box-shadow: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+:root .primary-action { background: var(--action-bg); color: var(--action-text); }
+:root .primary-action:hover { background: var(--action-hover); }
+:root .secondary-action { background: transparent; border-color: var(--border-strong); }
+:root :is(.surface-card, .glass) { border-radius: 1.1rem; backdrop-filter: none; }
+:root .soft-chip { color: var(--accent-blue); background: var(--accent-sapphire); border-color: var(--border-strong); }
+:root nav { background: color-mix(in srgb, var(--background) 96%, transparent); border-bottom: 1px solid var(--border); padding-block: 0.75rem; }
+:root nav > div { background: transparent; box-shadow: none; }
+:root nav > div:first-child { background: transparent; border: 0; border-radius: 0; }
+:root nav .group > span:first-child {
+  border-radius: 50%; border: 1px solid var(--border-strong); background: transparent;
+  color: var(--accent-blue); font-family: "Cormorant Garamond", Georgia, serif; box-shadow: none;
+}
+:root nav a { font-size: 0.75rem; }
+:root #about .image-panel { border-radius: .85rem; }
+:root #about .surface-card { background: var(--surface-bg); border: 1px solid var(--border); border-radius: .85rem; padding: .75rem; }
+:root #projects h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: 1.5rem; }
+:root #projects .surface-card { border-radius: 0.4rem; }
+:root footer svg { color: var(--accent-cyan); }
+:root footer .text-transparent { background: none; color: var(--accent-blue); }
+:root .fixed:is(button, div) button { box-shadow: 0 6px 20px #36432b20; }
+
+.portfolio-hero { position: relative; overflow: hidden; }
+.portfolio-hero-grid { max-width: none; position: relative; min-height: 760px; display: grid; grid-template-columns: 1fr; justify-items: center; text-align: center; align-items: center; padding-block: 2rem 5rem; }
+.portfolio-hero-copy { position: relative; z-index: 2; width: 100%; max-width: none; }
+.portfolio-hero-note { margin-inline: auto; max-width: none; margin-bottom: 1.5rem; color: var(--accent-gold); font: 400 clamp(2.3rem, 4vw, 3.75rem)/1.1 "Parisienne", cursive; }
+.portfolio-hero h1 { margin: 0 0 1.25rem; color: var(--accent-blue); font: 600 clamp(5rem, 7.2vw, 7.5rem)/0.88 "Cormorant Garamond", Georgia, serif; letter-spacing: -0.025em; }
+.portfolio-hero-role { color: var(--muted-foreground); font-size: .75rem; letter-spacing: .24em; text-transform: uppercase; margin-bottom: 2rem; }
+.portfolio-hero-description { margin-inline: auto; max-width: 43rem; color: var(--muted-foreground); font-size: 1rem; line-height: 1.8; list-style: none; padding: 0; }
+.portfolio-hero-description li { display: flex; align-items: flex-start; justify-content: center; gap: 1rem; margin-bottom: .9rem; }
+.portfolio-hero-description svg { flex-shrink: 0; margin-top: .25rem; color: var(--accent-gold); }
+.portfolio-hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+.portfolio-hero-actions a { display: inline-flex; align-items: center; justify-content: center; gap: 0.7rem; padding: 1rem 1.5rem; }
+.portfolio-hero-scroll { margin-inline: auto; display: flex; width: fit-content; gap: 0.8rem; align-items: center; margin-top: 2.5rem; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--subtle-foreground); }
+.portfolio-hero-values { display: grid; grid-template-columns: repeat(4,1fr); border-block: 1px solid var(--border); padding: 2rem max(2rem,calc((100vw - 76rem)/2)); color: var(--muted-foreground); font-size: 0.7rem; text-align: center; text-transform: uppercase; letter-spacing: 0.14em; }
+.portfolio-hero-values span + span { border-left: 1px solid var(--border); }
+:root nav .lg\:flex a { text-transform: uppercase; letter-spacing: .1em; font-weight: 600; font-size: .65rem; }
+:root nav > div:first-child > div:nth-child(2) { border: 1px solid var(--border); border-radius: 999px; padding: .35rem .6rem; }
+:root #projects .surface-card {
+  background: var(--surface-bg);
+  border: 1px solid var(--surface-border);
+  border-radius: 1.25rem;
+  box-shadow: var(--surface-shadow);
+}
+:root #projects .surface-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--surface-hover-shadow);
+}
+:root #projects .image-panel { border-radius: 0; }
+:root #projects h3 { font: 600 2rem/1.1 "Cormorant Garamond", Georgia, serif; }
+:root #projects .surface-card > div:last-child { padding: 1.5rem; }
+:root #socials h3 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.75rem; color: var(--accent-blue) !important; }
+:root #socials .blur-3xl, :root #socials .blur-xl { display: none; }
+:root #skills .display-serif { font-size: 2rem; }
+@media (min-width: 1500px) { .portfolio-hero-grid { min-height: 850px; } }
+@media (max-width: 767px) {
+  :root .portfolio-hero { padding-top: 7.5rem; }
+  .portfolio-hero-grid { min-height: auto; grid-template-columns: 1fr; gap: 2.5rem; padding-top: 2rem; padding-bottom: 3rem; }
+  .portfolio-hero-copy { max-width: 100%; }
+  .portfolio-hero-note { max-width: 18rem; font-size: 2.4rem; }
+  .portfolio-hero h1 { font-size: clamp(2.5rem, 11vw, 5.75rem); }
+  .portfolio-hero-description { font-size: .9rem; }
+  .portfolio-hero-role { letter-spacing: .14em; }
+  .portfolio-hero-values { grid-template-columns: 1fr 1fr; gap: 1.5rem .5rem; padding: 1.5rem 1rem; font-size: .6rem; line-height: 1.6; }
+  .portfolio-hero-values span + span { border: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root *, :root *::after { animation: none !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* A distinct closing section with warm, readable contrast. */
+:root footer {
+  --background: var(--footer-bg);
+  --foreground: #fbf5e9;
+  --card-foreground: #fbf5e9;
+  --muted-foreground: #e0e3d2;
+  --subtle-foreground: #bec8b1;
+  --accent-blue: #fbf5e9;
+  --accent-cyan: #c6d7ab;
+  --border: rgba(240, 238, 215, .22);
+  --border-strong: rgba(240, 238, 215, .4);
+  background: var(--footer-bg);
+  color: var(--foreground);
+  border-top: 1px solid var(--border-strong);
+}
+:root footer .footer-surface { display: none; }
+:root footer .footer-brand-icon {
+  background: #ffffff12;
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+:root footer h3 > span { background: #bdcca3; }
+:root footer a:hover { color: #fffdf7; }
+:root footer .secondary-action:hover { background: #ffffff12; }
+
+:root button.fixed, :root .fixed.bottom-6 button {
+  background: var(--action-bg);
+  color: var(--action-text);
+}
+
+/* The current section stays visible while scrolling or navigating. */
+:root nav .section-nav-link { position: relative; }
+:root nav .section-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: .25rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent-blue);
+  transform: scaleX(0);
+  transition: transform 180ms ease;
+}
+:root nav .section-nav-link[aria-current="location"] { color: var(--accent-blue); }
+:root nav .section-nav-link[aria-current="location"]::after { transform: scaleX(1); }

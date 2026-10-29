@@ -10,7 +10,7 @@ export default function Projects() {
     <section id="projects" className="py-24 bg-section-soft scroll-mt-24">
       <div className="page-container">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
@@ -19,8 +19,8 @@ export default function Projects() {
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <p className="section-copy max-w-2xl mx-auto">
-            A selection of my best work, demonstrating my technical skills and
-            problem-solving abilities.
+            Fullstack applications, security tooling, and frontend projects, covering
+            e-commerce, camera rentals, travel, movies, and online learning.
           </p>
         </motion.div>
 
@@ -28,7 +28,7 @@ export default function Projects() {
           {cvData.projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
@@ -42,8 +42,7 @@ export default function Projects() {
                 {/* Status Badge */}
                 <div className="absolute top-4 left-4 z-40 px-3 py-1 bg-[color-mix(in_srgb,var(--background)_78%,transparent)] backdrop-blur-md rounded-full border border-theme">
                   <span className="text-xs font-bold uppercase text-primary">
-                    {project.badge ??
-                      (index % 2 === 0 ? "Production" : "Masterclass")}
+                    {project.badge}
                   </span>
                 </div>
 
@@ -53,7 +52,7 @@ export default function Projects() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover opacity-100 transition-transform duration-500 dark:opacity-50 dark:group-hover:opacity-100"
+                    className="object-cover opacity-100 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 project-fade project-image-shade z-20" />
@@ -74,15 +73,17 @@ export default function Projects() {
                     >
                       <Github size={20} />
                     </a>
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 secondary-action hover:bg-accent-cyan/20 hover:scale-110"
-                      title="Live Demo"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 secondary-action hover:bg-accent-cyan/20 hover:scale-110"
+                        title="Live Demo"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -101,18 +102,26 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <p className="text-secondary text-sm leading-relaxed mb-6 line-clamp-2 min-h-[44px]">
+                {project.role && (
+                  <p className="text-sm font-semibold text-accent-cyan mb-2">
+                    {project.role}
+                  </p>
+                )}
+                {project.duration && (
+                  <p className="text-xs text-subtle mb-4">{project.duration}</p>
+                )}
+                <p className="text-secondary text-sm leading-relaxed mb-6">
                   {project.description}
                 </p>
 
                 {project.highlights && (
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <ul className="space-y-2 text-sm leading-relaxed text-secondary list-disc pl-4 mb-6">
                     {project.highlights.map((highlight) => (
-                      <span key={highlight} className="soft-chip px-3 py-1">
+                      <li key={highlight}>
                         {highlight}
-                      </span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 )}
 
                 {/* Mobile/Tablet Quick Actions */}
@@ -125,18 +134,20 @@ export default function Projects() {
                   >
                     <Github size={16} /> Code
                   </a>
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-accent-cyan/10 active:bg-accent-cyan/20 rounded-xl border border-accent-cyan/20 text-accent-cyan text-sm font-semibold transition-colors"
-                  >
-                    <ExternalLink size={16} /> Demo
-                  </a>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-accent-cyan/10 active:bg-accent-cyan/20 rounded-xl border border-accent-cyan/20 text-accent-cyan text-sm font-semibold transition-colors"
+                    >
+                      <ExternalLink size={16} /> Demo
+                    </a>
+                  )}
                 </div>
 
                 <div className="flex flex-wrap gap-2 pt-4 border-t border-theme">
-                  {project.tech.slice(0, 3).map((t) => (
+                  {project.tech.map((t) => (
                     <span
                       key={t}
                       className="px-3 py-1 bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] rounded-full text-xs font-semibold text-secondary hover:text-primary hover:bg-[color-mix(in_srgb,var(--foreground)_9%,transparent)] transition-colors"
@@ -144,11 +155,7 @@ export default function Projects() {
                       {t}
                     </span>
                   ))}
-                  {project.tech.length > 3 && (
-                    <span className="px-3 py-1 bg-[color-mix(in_srgb,var(--foreground)_5%,transparent)] rounded-full text-xs font-semibold text-subtle italic">
-                      +{project.tech.length - 3}
-                    </span>
-                  )}
+
                 </div>
               </div>
             </motion.div>

@@ -13,7 +13,7 @@ export default function Contact() {
     <section id="contact" className="py-24 bg-section scroll-mt-24">
       <div className="page-container">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
@@ -29,7 +29,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={false}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="space-y-8"
@@ -93,7 +93,7 @@ export default function Contact() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={false}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="glass p-5 sm:p-8 rounded-2xl flex flex-col justify-between gap-8"
@@ -103,12 +103,11 @@ export default function Contact() {
                 Let&apos;s work together
               </p>
               <h3 className="text-2xl md:text-3xl font-bold text-primary mb-5">
-                Open to internship, fresher, and junior web developer
-                opportunities.
+                Seeking a Fullstack Developer opportunity.
               </h3>
               <p className="section-copy">
                 I&apos;m interested in full-stack web development roles where I
-                can build clean interfaces, integrate reliable APIs, and apply
+                can build scalable, user-friendly interfaces, integrate RESTful APIs, and apply
                 my information security background to practical products.
               </p>
             </div>

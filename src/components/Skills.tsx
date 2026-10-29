@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { cvData } from "@/lib/data";
 import {
-  Boxes,
+  Workflow,
   Database,
   Layout,
   ServerCog,
@@ -12,30 +12,12 @@ import {
 } from "lucide-react";
 
 const categories = [
-  {
-    name: "Front-end",
-    icon: Layout,
-  },
-  {
-    name: "Back-end",
-    icon: ServerCog,
-  },
-  {
-    name: "Security & Integration",
-    icon: ShieldCheck,
-  },
-  {
-    name: "Database & storage",
-    icon: Database,
-  },
-  {
-    name: "DevOps & Tools",
-    icon: Wrench,
-  },
-  {
-    name: "Other Skills",
-    icon: Boxes,
-  },
+  { name: "Front-end", icon: Layout },
+  { name: "State Management & API Integration", icon: Workflow },
+  { name: "Back-end", icon: ServerCog },
+  { name: "Database & storage", icon: Database },
+  { name: "Payment & Security Integration", icon: ShieldCheck },
+  { name: "Tools & Workflow", icon: Wrench },
 ] as const;
 
 export default function Skills() {
@@ -46,7 +28,7 @@ export default function Skills() {
     >
       <div className="page-container relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
@@ -65,7 +47,7 @@ export default function Skills() {
           {categories.map((cat, catIndex) => (
             <motion.div
               key={cat.name}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={false}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: catIndex * 0.1, duration: 0.5 }}
@@ -89,7 +71,7 @@ export default function Skills() {
                   .map((skill, skillIndex) => (
                     <motion.div
                       key={skill.name}
-                      initial={{ opacity: 0, x: -10 }}
+                      initial={false}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: catIndex * 0.1 + skillIndex * 0.05 }}

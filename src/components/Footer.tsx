@@ -7,8 +7,6 @@ import {
   Phone,
   MapPin,
   BookOpen,
-  Music,
-  MoveRight,
   Code2,
   Cpu,
   Database,
@@ -28,7 +26,7 @@ export default function Footer() {
           {/* Column 1: Brand & Bio */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-xl bg-linear-to-tr from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+              <div className="footer-brand-icon w-10 h-10 rounded-xl bg-linear-to-tr from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
                 <Code2 className="text-white" size={20} />
               </div>
               <span className="text-2xl font-bold text-primary">
@@ -39,9 +37,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-secondary leading-relaxed text-sm">
-              Fullstack web developer focused on clean interfaces, secure
-              authentication flows, and practical web applications built with
-              React, Next.js, and Spring Boot.
+              {cvData.tagline}
             </p>
             <div className="flex space-x-4">
               {cvData.socials.map((social, index) => {
@@ -82,7 +78,7 @@ export default function Footer() {
                   size={16}
                 />
                 <span className="text-secondary text-sm">
-                  HTML, SCSS, JavaScript, TypeScript, Java
+                  HTML5, CSS3/SCSS, JavaScript, TypeScript, Java
                 </span>
               </li>
               <li className="flex items-start space-x-3 group">
@@ -100,7 +96,7 @@ export default function Footer() {
                   size={16}
                 />
                 <span className="text-secondary text-sm">
-                  MySQL, PostgreSQL, MongoDB
+                  PostgreSQL, MySQL, Redis, MinIO
                 </span>
               </li>
               <li className="flex items-start space-x-3 group">
@@ -109,43 +105,25 @@ export default function Footer() {
                   size={16}
                 />
                 <span className="text-secondary text-sm">
-                  Bootstrap, MUI, Antd, Tailwind CSS, shadcn/ui
+                  Tailwind CSS, TanStack Query, Zustand, Axios
                 </span>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Hobbies */}
+          {/* Column 3: Interests */}
           <div>
             <h3 className="text-primary font-bold text-base mb-6 uppercase flex items-center">
               <span className="w-8 h-px bg-blue-500 mr-3"></span>
-              Hobbies
+              Interests
             </h3>
             <ul className="space-y-4">
-              <li className="flex items-center space-x-3 group">
-                <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center">
-                  <BookOpen className="text-orange-500" size={16} />
-                </div>
-                <span className="text-secondary text-sm group-hover:text-primary transition-colors">
-                  Reading Technology Blogs
-                </span>
-              </li>
-              <li className="flex items-center space-x-3 group">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                  <MoveRight className="text-emerald-500" size={16} />
-                </div>
-                <span className="text-secondary text-sm group-hover:text-primary transition-colors">
-                  Walking & Refreshing
-                </span>
-              </li>
-              <li className="flex items-center space-x-3 group">
-                <div className="w-8 h-8 rounded-lg bg-pink-500/10 flex items-center justify-center">
-                  <Music className="text-pink-500" size={16} />
-                </div>
-                <span className="text-secondary text-sm group-hover:text-primary transition-colors">
-                  Listening to Music
-                </span>
-              </li>
+              {cvData.hobbies.map((interest) => (
+                <li key={interest.name} className="flex items-start gap-3">
+                  <BookOpen className="text-accent-cyan shrink-0 mt-1" size={16} />
+                  <span className="text-secondary text-sm">{interest.name}</span>
+                </li>
+              ))}
             </ul>
           </div>
 

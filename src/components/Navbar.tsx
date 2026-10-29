@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Download, Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -19,13 +19,43 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+  const navigating = useRef(false);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    let settledTimer: ReturnType<typeof setTimeout>;
+
+    const updateActiveSection = () => {
+      const marker = (navRef.current?.getBoundingClientRect().bottom ?? 96) + 32;
+      let current = "";
+      for (const link of navLinks) {
+        const section = document.getElementById(link.href.slice(1));
+        if (section && section.getBoundingClientRect().top <= marker) {
+          current = link.href;
+        }
+      }
+      setActiveSection(current);
+    };
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+      if (!navigating.current) updateActiveSection();
+      clearTimeout(settledTimer);
+      settledTimer = setTimeout(() => {
+        navigating.current = false;
+        updateActiveSection();
+      }, 150);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      clearTimeout(settledTimer);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   const scrollToSection = (
@@ -37,6 +67,8 @@ export default function Navbar() {
     const element = document.getElementById(targetId);
 
     if (element) {
+      navigating.current = true;
+      setActiveSection(href);
       if (isOpen) {
         setIsOpen(false);
         // Small delay to let the menu exit animation start and avoid layout shift jitter
@@ -53,7 +85,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 z-50 w-full px-3 py-4 transition-all duration-300 sm:px-5 lg:py-6">
+    <nav ref={navRef} aria-label="Main navigation" className="fixed top-0 z-50 w-full px-3 py-4 transition-all duration-300 sm:px-5 lg:py-6">
       <div
         className={`mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-3xl border border-theme bg-[color-mix(in_srgb,var(--background)_86%,white_12%)] px-4 py-3 shadow-[0_20px_70px_rgba(37,99,235,0.14)] backdrop-blur-xl transition-all duration-300 dark:bg-[color-mix(in_srgb,var(--background)_78%,white_4%)] ${
           scrolled
@@ -62,7 +94,7 @@ export default function Navbar() {
         }`}
       >
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={false}
           animate={{ opacity: 1, x: 0 }}
           className="group flex cursor-pointer items-center gap-3"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -86,11 +118,12 @@ export default function Navbar() {
             <motion.a
               key={link.name}
               href={link.href}
+              aria-current={activeSection === link.href ? "location" : undefined}
               onClick={(e) => scrollToSection(e, link.href)}
-              initial={{ opacity: 0, y: -10 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.06 }}
-              className="rounded-2xl px-3 py-2.5 text-sm font-medium text-secondary transition-colors hover:bg-accent-sapphire hover:text-accent-blue xl:px-4"
+              className="section-nav-link rounded-2xl px-3 py-2.5 text-sm font-medium text-secondary transition-colors hover:bg-accent-sapphire hover:text-accent-blue xl:px-4"
             >
               {link.name}
             </motion.a>
@@ -136,8 +169,9 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
+              aria-current={activeSection === link.href ? "location" : undefined}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="rounded-2xl px-4 py-3 text-base font-medium text-primary transition-colors hover:bg-accent-sapphire hover:text-accent-blue"
+                  className="section-nav-link rounded-2xl px-4 py-3 text-base font-medium text-primary transition-colors hover:bg-accent-sapphire hover:text-accent-blue"
                 >
                   {link.name}
                 </a>

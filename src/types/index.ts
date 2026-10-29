@@ -2,11 +2,11 @@ export interface Skill {
   name: string;
   category:
     | "Front-end"
+    | "State Management & API Integration"
     | "Back-end"
-    | "Security & Integration"
     | "Database & storage"
-    | "DevOps & Tools"
-    | "Other Skills";
+    | "Payment & Security Integration"
+    | "Tools & Workflow";
   icon?: string;
 }
 
@@ -24,7 +24,6 @@ export interface Education {
   degree: string;
   duration: string;
   focus: string;
-  coursework: string[];
   focusAreas: string[];
   activities: string;
   icon?: string;
@@ -35,7 +34,9 @@ export interface Project {
   description: string;
   tech: string[];
   githubUrl: string;
-  liveUrl: string;
+  liveUrl?: string;
+  role?: string;
+  duration?: string;
   image: string;
   badge?: string;
   highlights?: string[];
