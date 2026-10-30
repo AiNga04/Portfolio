@@ -64,15 +64,20 @@ export default function Projects() {
                 {/* Quick Actions Overlay (Desktop only) */}
                 <div className="absolute inset-0 hidden xl:flex items-center justify-center gap-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-30 px-6">
                   <div className="flex gap-4 p-2 bg-[color-mix(in_srgb,var(--background)_55%,transparent)] backdrop-blur-xl rounded-xl border border-theme">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 secondary-action hover:bg-accent-cyan/20 hover:scale-110"
-                      title="View Code"
-                    >
-                      <Github size={20} />
-                    </a>
+                    {(project.sourceLinks ?? [{ label: "Code", url: project.githubUrl }]).map((source) => (
+                      <a
+                        key={source.url}
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 p-3 secondary-action hover:bg-accent-cyan/20 hover:scale-110"
+                        aria-label={`${project.title} - ${source.label}`}
+                        title={`View ${source.label}`}
+                      >
+                        <Github size={20} />
+                        {project.sourceLinks && <span className="text-xs">{source.label}</span>}
+                      </a>
+                    ))}
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
@@ -125,15 +130,19 @@ export default function Projects() {
                 )}
 
                 {/* Mobile/Tablet Quick Actions */}
-                <div className="flex xl:hidden gap-3 mb-6">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 secondary-action text-sm active:bg-accent-cyan/10"
-                  >
-                    <Github size={16} /> Code
-                  </a>
+                <div className={`flex flex-wrap gap-3 mb-6 ${project.sourceLinks ? "" : "xl:hidden"}`}>
+                  {(project.sourceLinks ?? [{ label: "Code", url: project.githubUrl }]).map((source) => (
+                    <a
+                      key={source.url}
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 py-2.5 secondary-action text-sm active:bg-accent-cyan/10"
+                      aria-label={`${project.title} - ${source.label}`}
+                    >
+                      <Github size={16} /> {source.label}
+                    </a>
+                  ))}
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}

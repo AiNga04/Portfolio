@@ -34,6 +34,7 @@ export interface Project {
   description: string;
   tech: string[];
   githubUrl: string;
+  sourceLinks?: { label: string; url: string }[];
   liveUrl?: string;
   role?: string;
   duration?: string;

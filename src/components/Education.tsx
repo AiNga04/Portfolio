@@ -91,7 +91,7 @@ export default function Education() {
 
               <div className="flex items-center gap-2 text-primary font-bold mb-4">
                 <Code2 size={18} className="text-accent-cyan" />
-                <span>Academic Status</span>
+                <span>Academic Record</span>
               </div>
               <div className="inner-surface rounded-2xl px-4 py-4 leading-relaxed text-secondary">
                 {education.activities}
@@ -99,6 +99,7 @@ export default function Education() {
             </div>
           </div>
         </motion.div>
+
       </div>
     </section>
   );

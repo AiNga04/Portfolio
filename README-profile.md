@@ -8,11 +8,11 @@
 [![GitHub Followers](https://img.shields.io/github/followers/AiNga04?style=social)](https://github.com/AiNga04)
 [![GitHub Stars](https://img.shields.io/github/stars/AiNga04?style=social)](https://github.com/AiNga04)
 
-I am a **Fullstack Web Developer** with a background in **Information Security** at HCMUTE. I build responsive web applications with **React.js, Next.js, TypeScript, Java, and Spring Boot**, connecting user-friendly interfaces with RESTful APIs, authentication, and role-based authorization.
+I am a **Fresher Fullstack Developer** with hands-on experience in **Java, Spring Boot, Next.js, and TypeScript**, including a Web Developer internship at **FPT Software**.
 
-I completed a **Web Developer internship at FPT Software** and have developed projects covering **e-commerce, camera rental workflows, payment and identity verification integrations, and secure API communication**.
+I have built and deployed full-stack applications with **secure authentication, payment integration, and Docker-based deployment on AWS EC2**, supported by a background in **Information Security** at HCMUTE.
 
-🎯 **Seeking a Fullstack Developer opportunity** to build scalable, secure, and user-friendly web applications.
+🎯 **Seeking a Fullstack Developer opportunity** to contribute to reliable, secure web applications.
 
 🌐 [Portfolio](https://ainga2k4.vercel.app/) · 📄 [Resume](https://ainga2k4.vercel.app/cv/truong-ai-nga-resume.pdf) · 📫 [Email](mailto:ainga01012004@gmail.com) · 💼 [LinkedIn](https://www.linkedin.com/in/nga-tr%C6%B0%C6%A1ng-bb62202ab/)
 
@@ -25,7 +25,7 @@ I completed a **Web Developer internship at FPT Software** and have developed pr
 **Ho Chi Minh City University of Technology and Education (HCMUTE)**  
 **Major:** Information Security · **2022 - 2026**  
 **GPA:** 3.34/4.0  
-Completed all degree requirements; awaiting graduation confirmation.
+
 
 ## 💼 Work Experience
 
@@ -89,6 +89,9 @@ Experience integrating payments and identity verification; interest in secure ap
 
 ### 🛠️ Tools & Workflow
 
+![AWS EC2](https://img.shields.io/badge/AWS%20EC2-FF9900?style=flat-square)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
@@ -100,52 +103,39 @@ Experience integrating payments and identity verification; interest in secure ap
 
 ## 🚀 Featured Projects
 
-### 📷 Digital Rental - Secure Camera Rental Platform
+### Digital Rental - Secure Camera Rental Platform
 
 **Fullstack Developer · Graduation Thesis**  
 **Feb 5, 2026 - Present**
 
-A fullstack camera rental platform covering customer and admin interfaces, product browsing, checkout, rental tracking, and management dashboards.
+Graduation thesis implementing end-to-end camera rental workflows for equipment availability, deposits, device serial tracking, returns, and fee calculation.
 
-- Built backend APIs for equipment availability, rental orders, deposits, device serial management, and overdue/damage fees.
-- Implemented role-based access for **customer, staff, admin, and super admin**.
-- Integrated **VNPay**, **FPT AI eKYC**, and **MinIO** file storage.
-- Integrated an **E2EE SDK** to protect sensitive API payloads using **ECDH, HKDF-SHA256, and AES-256-GCM**.
+- TanStack Query caching for server state and Zustand for authentication/loading state.
+- Spring Security RBAC and E2EE using ECDH, HKDF-SHA256, and AES-256-GCM.
+- VNPay payments, FPT AI eKYC verification, and MinIO object storage.
+- Multi-stage Docker images with non-root execution and container health checks.
+- GitHub Actions CI/CD for Docker builds, Docker Hub pushes, and AWS EC2 deployment.
 
-**Stack:** Next.js, React, TypeScript, Tailwind CSS, Java, Spring Boot, PostgreSQL, Redis, MinIO, VNPay, FPT AI eKYC.
+**Stack:** Next.js, TypeScript, Spring Boot, PostgreSQL, Redis, MinIO, TanStack Query, Zustand, Docker, AWS EC2.
 
 [💻 Source Code](https://github.com/AiNga04/digital-rental) · [🌐 Live Demo](https://www.lenshub.shop/)
 
-### 🛍️ Zyna E-Commerce Frontend
+### Zyna E-Commerce - Full-Stack Fashion Platform
 
-**Frontend Developer · Personal Project**  
-**Nov 25, 2025 - Mar 22, 2026**
+**Fullstack Developer · Personal Project**
+**Oct 28, 2025 - Mar 22, 2026**
 
-Responsive customer and admin interfaces for product browsing, shopping cart, checkout, order tracking, product management, and user profiles.
+Full-stack fashion e-commerce platform with customer and admin interfaces, modular RESTful APIs, and complete product, inventory, checkout, order, and shipping workflows.
 
-- Built dashboards for **admin, staff, shipper, and customer** roles.
-- Integrated backend RESTful APIs with **Axios and TanStack Query** for data fetching and caching.
-- Used **Next.js App Router, SSR, and Zustand** for rendering and state management.
+- Inventory validation and transaction management for consistent order processing.
+- Spring Security, JWT refresh-token rotation, Redis token blacklisting, and RBAC.
+- Axios interceptors with a refresh-token queue for concurrent 401 responses.
+- TanStack Query caching and auto-refetching for server state, with Zustand for UI state.
+- VNPay payments and Redis caching for backend data access.
 
-**Stack:** Next.js 16, React 19, TypeScript, Tailwind CSS, TanStack Query, Zustand, Axios, Framer Motion.
+**Stack:** Java, Spring Boot, Spring Security, PostgreSQL, Redis, Next.js, TypeScript, TanStack Query, Zustand, Axios.
 
-[💻 Source Code](https://github.com/AiNga04/Fe-Ecommerce)
-
-### ⚙️ Zyna E-Commerce Backend
-
-**Backend Developer · Personal Project**  
-**Oct 28, 2025 - Present**
-
-RESTful APIs for a fashion e-commerce platform using **Spring Boot and layered architecture**.
-
-- Implemented **JWT authentication and RBAC** with Spring Security.
-- Built modules for **products, orders, inventory, vouchers, and shipping workflows**.
-- Integrated **VNPay** payment processing.
-- Used **Redis caching** to improve application performance and optimize data retrieval.
-
-**Stack:** Java 17, Spring Boot 3, Spring Security, PostgreSQL, Redis, JWT, Docker, VNPay API.
-
-[💻 Source Code](https://github.com/AiNga04/Be-Ecommerce)
+[💻 Frontend](https://github.com/AiNga04/Fe-Ecommerce) · [💻 Backend](https://github.com/AiNga04/Be-Ecommerce)
 
 ### 🔎 More Projects
 
@@ -155,6 +145,16 @@ RESTful APIs for a fashion e-commerce platform using **Spring Boot and layered a
 | **Wanderlust Travel**      | Responsive travel and booking interface    | [Code](https://github.com/AiNga04/11_Tailwind_Travel) · [Demo](https://ainga04.github.io/11_Tailwind_Travel/)          |
 | **Movie Zone**             | Movie browsing interface                   | [Code](https://github.com/AiNga04/8_Movie_Zone) · [Demo](https://ainga04.github.io/8_Movie_Zone/)                      |
 | **Online Course Platform** | Responsive course sales interface          | [Code](https://github.com/AiNga04/6_Bootstrap_CourseSales) · [Demo](https://ainga04.github.io/6_Bootstrap_CourseSales) |
+
+## 🎓 Professional Training & Honors
+
+Java Web Full-Stack Development - VTI Academy (Completed 84 training sessions).
+
+- Power On Scholarship Recipient - Academic Years 2022-2023, 2023-2024, 2024-2025, 2025-2026
+- Zhi Shan Foundation Scholarship Recipient (2018-2026)
+- Pham Van Dong Scholarship Recipient - Academic Years 2024-2025, 2025-2026
+- Tiep Suc Den Truong Scholarship - Tuoi Tre Newspaper (2022)
+- Dong Hanh Scholarship Recipient - 44th Award Round (2022)
 
 ## 🌱 Interests
 

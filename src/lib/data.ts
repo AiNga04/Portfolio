@@ -5,17 +5,17 @@ export const cvData: CVData = {
   title: "Fullstack Web Developer",
   roles: ["Fullstack Web Developer", "React & Next.js Developer", "Java & Spring Boot Developer"],
   tagline:
-    "I build responsive, secure web applications with React.js, Next.js, TypeScript, and Spring Boot, from user-friendly interfaces to RESTful APIs and role-based authentication.",
+    "Fresher Fullstack Developer building secure web applications with Java, Spring Boot, Next.js, and TypeScript, with hands-on experience deploying Docker-based applications on AWS EC2.",
   avatar: "/assets/images/ai-nga.jpg",
   about: {
-  "summary": "I am a Fullstack Web Developer with a background in Information Security at HCMUTE and hands-on experience with React.js, Next.js, TypeScript, Java, and Spring Boot. I completed a Web Developer internship at FPT Software and have built fullstack projects covering e-commerce, camera rental workflows, and secure API communication.",
+  "summary": "I am a Fresher Fullstack Developer with hands-on experience in Java, Spring Boot, Next.js, and TypeScript, including a Web Developer internship at FPT Software. My Information Security background supports my work on secure authentication, payment integration, and practical full-stack applications.",
   "strengths": [
-    "Responsive UI",
-    "RESTful API Integration",
-    "JWT & RBAC",
-    "Fullstack Development"
+    "End-to-End Workflows",
+    "Secure Authentication",
+    "Server & UI State",
+    "Docker & AWS EC2"
   ],
-  "goal": "I am seeking a Fullstack Developer opportunity to build scalable, secure, and user-friendly web applications. My experience includes PostgreSQL and Redis, payment and identity verification integrations, and secure application design."
+  "goal": "I have built and deployed full-stack applications with Docker on AWS EC2, automated delivery with GitHub Actions, and integrated VNPay, FPT AI eKYC, and MinIO. I am seeking a Fullstack Developer opportunity where I can contribute to reliable web applications and continue developing my engineering skills."
 },
   education: {
     school: "Ho Chi Minh City University of Technology and Education (HCMUTE)",
@@ -30,7 +30,7 @@ export const cvData: CVData = {
       "Backend System Design",
     ],
     activities:
-      "GPA 3.34/4.0. Completed all degree requirements and awaiting graduation confirmation.",
+      "GPA 3.34/4.0. Major: Information Security.",
     icon: "/assets/images/hcmute_logo.png",
   },
   skills: [
@@ -63,7 +63,7 @@ export const cvData: CVData = {
     "category": "State Management & API Integration"
   },
   {
-    "name": "JWT Authentication Handling",
+    "name": "JWT / Refresh-Token Handling",
     "category": "State Management & API Integration"
   },
   {
@@ -103,11 +103,11 @@ export const cvData: CVData = {
     "category": "Payment & Security Integration"
   },
   {
-    "name": "Git / Docker / Linux",
+    "name": "Git / Docker / Linux / AWS EC2",
     "category": "Tools & Workflow"
   },
   {
-    "name": "CI/CD / Postman",
+    "name": "CI/CD / GitHub Actions / Postman",
     "category": "Tools & Workflow"
   },
   {
@@ -144,79 +144,70 @@ export const cvData: CVData = {
     "title": "Digital Rental - Secure Camera Rental Platform",
     "role": "Fullstack Developer",
     "duration": "Feb 5, 2026 - Present",
-    "description": "Graduation thesis covering customer and admin interfaces, equipment availability, rental orders, deposits, device serial management, and overdue or damage fees.",
+    "description": "Graduation thesis implementing end-to-end camera rental workflows for equipment availability, deposits, device serial tracking, returns, and fee calculation.",
     "tech": [
       "Next.js",
-      "React",
       "TypeScript",
-      "Tailwind CSS",
-      "Java",
       "Spring Boot",
       "PostgreSQL",
       "Redis",
       "MinIO",
-      "VNPay",
-      "FPT AI eKYC"
+      "TanStack Query",
+      "Zustand",
+      "Docker",
+      "AWS EC2"
     ],
     "githubUrl": "https://github.com/AiNga04/digital-rental",
     "liveUrl": "https://www.lenshub.shop/",
     "image": "/projects/digital-rental.png",
     "badge": "Graduation Thesis",
     "highlights": [
-      "Customer, staff, admin, and super admin access with RBAC.",
-      "VNPay payments, FPT AI eKYC, and MinIO file storage.",
-      "E2EE SDK integration using ECDH, HKDF-SHA256, and AES-256-GCM."
+      "TanStack Query caching for server state and Zustand for authentication/loading state.",
+      "Spring Security RBAC and E2EE using ECDH, HKDF-SHA256, and AES-256-GCM.",
+      "VNPay payments, FPT AI eKYC verification, and MinIO object storage.",
+      "Multi-stage Docker images with non-root execution and container health checks.",
+      "GitHub Actions CI/CD for Docker builds, Docker Hub pushes, and AWS EC2 deployment."
     ],
     "featured": true
   },
-  {
-    "title": "Zyna E-Commerce Frontend",
-    "role": "Frontend Developer",
-    "duration": "Nov 25, 2025 - Mar 22, 2026",
-    "description": "Responsive customer and admin interfaces for product browsing, shopping cart, checkout, order tracking, product management, and user profiles.",
-    "tech": [
-      "Next.js 16",
-      "React 19",
-      "TypeScript",
-      "Tailwind CSS",
-      "TanStack Query",
-      "Zustand",
-      "Axios",
-      "Framer Motion"
-    ],
-    "githubUrl": "https://github.com/AiNga04/Fe-Ecommerce",
-    "image": "/projects/ecommerce-fe.png",
-    "badge": "Personal Project",
-    "highlights": [
-      "Role-based dashboards for admin, staff, shipper, and customer.",
-      "RESTful API integration and caching with Axios and TanStack Query.",
-      "Next.js App Router, SSR, and Zustand for performance and state management."
-    ]
-  },
-  {
-    "title": "Zyna E-Commerce Backend",
-    "role": "Backend Developer",
-    "duration": "Oct 28, 2025 - Present",
-    "description": "RESTful APIs for a fashion e-commerce platform using Spring Boot and layered architecture, with modules for products, orders, inventory, vouchers, and shipping.",
-    "tech": [
-      "Java 17",
-      "Spring Boot 3",
-      "Spring Security",
-      "PostgreSQL",
-      "Redis",
-      "JWT",
-      "Docker",
-      "VNPay API"
-    ],
-    "githubUrl": "https://github.com/AiNga04/Be-Ecommerce",
-    "image": "/projects/ecommerce-be.png",
-    "badge": "Personal Project",
-    "highlights": [
-      "JWT authentication and RBAC with Spring Security.",
-      "VNPay payment processing for online transactions.",
-      "Redis caching to optimize data retrieval and application performance."
-    ]
-  },
+{
+  "title": "Zyna E-Commerce - Full-Stack Fashion Platform",
+  "role": "Fullstack Developer",
+  "duration": "Oct 28, 2025 - Mar 22, 2026",
+  "description": "Full-stack fashion e-commerce platform with customer and admin interfaces, modular RESTful APIs, and complete product, inventory, checkout, order, and shipping workflows.",
+  "tech": [
+    "Java",
+    "Spring Boot",
+    "Spring Security",
+    "PostgreSQL",
+    "Redis",
+    "Next.js",
+    "TypeScript",
+    "TanStack Query",
+    "Zustand",
+    "Axios"
+  ],
+  "githubUrl": "https://github.com/AiNga04/Fe-Ecommerce",
+  "sourceLinks": [
+    {
+      "label": "Frontend",
+      "url": "https://github.com/AiNga04/Fe-Ecommerce"
+    },
+    {
+      "label": "Backend",
+      "url": "https://github.com/AiNga04/Be-Ecommerce"
+    }
+  ],
+  "image": "/projects/ecommerce-fe.png",
+  "badge": "Personal Project",
+  "highlights": [
+    "Inventory validation and transaction management for consistent order processing.",
+    "Spring Security, JWT refresh-token rotation, Redis token blacklisting, and RBAC.",
+    "Axios interceptors with a refresh-token queue for concurrent 401 responses.",
+    "TanStack Query caching and auto-refetching for server state, with Zustand for UI state.",
+    "VNPay payments and Redis caching for backend data access."
+  ]
+},
     {
       badge: "Personal Project",
       title: "E2EE_SHIELD SDK",
@@ -259,7 +250,7 @@ export const cvData: CVData = {
 ],
   contact: {
     email: "ainga01012004@gmail.com",
-    phone: "0376600545",
+    phone: "+84 376 600 545",
     address: "Thu Duc, Viet Nam",
     linkedin: "https://www.linkedin.com/in/nga-tr%C6%B0%C6%A1ng-bb62202ab/",
     github: "https://github.com/AiNga04",

@@ -25,13 +25,13 @@ export default function Hero() {
             <li>
               <Code2 size={20} />
               <span>
-                Responsive web experiences with React, Next.js, and Spring Boot.
+                Fullstack web applications with Java, Spring Boot, Next.js, and TypeScript.
               </span>
             </li>
             <li>
               <ShieldCheck size={20} />
               <span>
-                A background in Information Security. Built with care.
+                Secure authentication, payment integration, and Docker deployment on AWS EC2.
               </span>
             </li>
             <li>

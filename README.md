@@ -72,7 +72,7 @@ A high-performance, visually stunning personal portfolio/CV website built with *
 
 ## 📄 Personal Introduction
 
-> Hi, I'm **Truong Ai Nga**, a passionate front-end developer and security-focused student who loves crafting beautiful and functional web experiences. Always eager to learn and grow in the ever-evolving tech world.
+> Hi, I'm **Truong Ai Nga**, a Fresher Fullstack Developer with a background in Information Security and a Web Developer internship at FPT Software. I build applications with Java, Spring Boot, Next.js, and TypeScript, including secure authentication, payment integration, and Docker-based deployment on AWS EC2.
 
 ---
 

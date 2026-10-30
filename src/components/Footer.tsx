@@ -105,7 +105,7 @@ export default function Footer() {
                   size={16}
                 />
                 <span className="text-secondary text-sm">
-                  Tailwind CSS, TanStack Query, Zustand, Axios
+                  Docker, AWS EC2, GitHub Actions, CI/CD
                 </span>
               </li>
             </ul>
