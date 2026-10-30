@@ -149,12 +149,12 @@ RESTful APIs for a fashion e-commerce platform using **Spring Boot and layered a
 
 ### 🔎 More Projects
 
-| Project | Focus | Links |
-| --- | --- | --- |
-| **E2EE_SHIELD SDK** | Secure API communication and E2EE concepts | [Code](https://github.com/AiNga04/E2EE_SHIELD) |
-| **Wanderlust Travel** | Responsive travel and booking interface | [Code](https://github.com/AiNga04/11_Tailwind_Travel) · [Demo](https://ainga04.github.io/11_Tailwind_Travel/) |
-| **Movie Zone** | Movie browsing interface | [Code](https://github.com/AiNga04/8_Movie_Zone) · [Demo](https://ainga04.github.io/8_Movie_Zone/) |
-| **Online Course Platform** | Responsive course sales interface | [Code](https://github.com/AiNga04/6_Bootstrap_CourseSales) · [Demo](https://ainga04.github.io/6_Bootstrap_CourseSales) |
+| Project                    | Focus                                      | Links                                                                                                                  |
+| -------------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| **E2EE_SHIELD SDK**        | Secure API communication and E2EE concepts | [Code](https://github.com/AiNga04/E2EE_SHIELD)                                                                         |
+| **Wanderlust Travel**      | Responsive travel and booking interface    | [Code](https://github.com/AiNga04/11_Tailwind_Travel) · [Demo](https://ainga04.github.io/11_Tailwind_Travel/)          |
+| **Movie Zone**             | Movie browsing interface                   | [Code](https://github.com/AiNga04/8_Movie_Zone) · [Demo](https://ainga04.github.io/8_Movie_Zone/)                      |
+| **Online Course Platform** | Responsive course sales interface          | [Code](https://github.com/AiNga04/6_Bootstrap_CourseSales) · [Demo](https://ainga04.github.io/6_Bootstrap_CourseSales) |
 
 ## 🌱 Interests
 
@@ -164,8 +164,6 @@ RESTful APIs for a fashion e-commerce platform using **Spring Boot and layered a
 ---
 
 ## <img src="https://media.giphy.com/media/cj87CxfRtrUifF3Ryk/giphy.gif" width="25px" height="20px"> GitHub Stats
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=AiNga04&bg_color=161b22&color=ffffff&line=d5d5d5&point=a76c6c&area=true&hide_border=true&hide_title=true" />
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
 
@@ -207,4 +205,3 @@ RESTful APIs for a fashion e-commerce platform using **Spring Boot and layered a
     <img src="https://readme-typing-svg.herokuapp.com?size=22&color=9B59B6&center=true&vCenter=true&width=500&lines=🌐+Visit+My+Portfolio;🚀+Check+Out+My+Projects;💻+Fullstack+Web+Developer" />
   </a>
 </p>
-

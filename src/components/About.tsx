@@ -50,8 +50,8 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="lg:w-1/2 relative w-full max-w-xl"
           >
-            <div className="surface-card relative aspect-square overflow-hidden p-3">
-              <div className="image-panel relative h-full w-full overflow-hidden rounded-[1rem]">
+            <div className="surface-card relative overflow-hidden p-3">
+              <div className="image-panel relative aspect-square w-full overflow-hidden rounded-[1rem]">
                 <Image
                   src={cvData.avatar}
                   alt={cvData.name}
